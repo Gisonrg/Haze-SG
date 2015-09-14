@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9832B6551BA6FA7C00C8D7EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */; };
+		9832B6571BA6FA7C00C8D7EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6561BA6FA7C00C8D7EC /* Images.xcassets */; };
+		9832B65A1BA6FA7C00C8D7EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6581BA6FA7C00C8D7EC /* MainMenu.xib */; };
+		9832B6661BA6FA7C00C8D7EC /* Haze_SGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6651BA6FA7C00C8D7EC /* Haze_SGTests.swift */; };
+		9832B6711BA6FCD500C8D7EC /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B66F1BA6FCD500C8D7EC /* IndexViewController.swift */; };
+		9832B6721BA6FCD500C8D7EC /* IndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6701BA6FCD500C8D7EC /* IndexViewController.xib */; };
+		9832B6771BA7087B00C8D7EC /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6761BA7087B00C8D7EC /* EventMonitor.swift */; };
+		9832B67B1BA714F500C8D7EC /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B67A1BA714F500C8D7EC /* APIHelper.swift */; };
+		F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E647CA0C2A393ACF01813A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9832B6601BA6FA7C00C8D7EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9832B6471BA6FA7C00C8D7EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9832B64E1BA6FA7C00C8D7EC;
+			remoteInfo = "Haze@SG";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27E843C37512E364F8BB5592 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9832B64F1BA6FA7C00C8D7EC /* Haze@SG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haze@SG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9832B6531BA6FA7C00C8D7EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9832B6561BA6FA7C00C8D7EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9832B6591BA6FA7C00C8D7EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9832B65F1BA6FA7C00C8D7EC /* Haze@SGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Haze@SGTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9832B6641BA6FA7C00C8D7EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9832B6651BA6FA7C00C8D7EC /* Haze_SGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haze_SGTests.swift; sourceTree = "<group>"; };
+		9832B66F1BA6FCD500C8D7EC /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		9832B6701BA6FCD500C8D7EC /* IndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexViewController.xib; sourceTree = "<group>"; };
+		9832B6761BA7087B00C8D7EC /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		9832B67A1BA714F500C8D7EC /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		9E647CA0C2A393ACF01813A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9832B64C1BA6FA7C00C8D7EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9832B65C1BA6FA7C00C8D7EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06DEE8E37AACD8F8DA000A81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */,
+				27E843C37512E364F8BB5592 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		28C05C6C163B50064B9E6EAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E647CA0C2A393ACF01813A2 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9832B6461BA6FA7C00C8D7EC = {
+			isa = PBXGroup;
+			children = (
+				9832B6511BA6FA7C00C8D7EC /* Haze@SG */,
+				9832B6621BA6FA7C00C8D7EC /* Haze@SGTests */,
+				9832B6501BA6FA7C00C8D7EC /* Products */,
+				06DEE8E37AACD8F8DA000A81 /* Pods */,
+				28C05C6C163B50064B9E6EAE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9832B6501BA6FA7C00C8D7EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9832B64F1BA6FA7C00C8D7EC /* Haze@SG.app */,
+				9832B65F1BA6FA7C00C8D7EC /* Haze@SGTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9832B6511BA6FA7C00C8D7EC /* Haze@SG */ = {
+			isa = PBXGroup;
+			children = (
+				9832B6791BA713E800C8D7EC /* Util */,
+				9832B6781BA713D900C8D7EC /* Controller */,
+				9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */,
+				9832B6731BA6FCDC00C8D7EC /* View */,
+				9832B6521BA6FA7C00C8D7EC /* Supporting Files */,
+			);
+			path = "Haze@SG";
+			sourceTree = "<group>";
+		};
+		9832B6521BA6FA7C00C8D7EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9832B6561BA6FA7C00C8D7EC /* Images.xcassets */,
+				9832B6531BA6FA7C00C8D7EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9832B6621BA6FA7C00C8D7EC /* Haze@SGTests */ = {
+			isa = PBXGroup;
+			children = (
+				9832B6651BA6FA7C00C8D7EC /* Haze_SGTests.swift */,
+				9832B6631BA6FA7C00C8D7EC /* Supporting Files */,
+			);
+			path = "Haze@SGTests";
+			sourceTree = "<group>";
+		};
+		9832B6631BA6FA7C00C8D7EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9832B6641BA6FA7C00C8D7EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9832B6731BA6FCDC00C8D7EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9832B6701BA6FCD500C8D7EC /* IndexViewController.xib */,
+				9832B6581BA6FA7C00C8D7EC /* MainMenu.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9832B6781BA713D900C8D7EC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9832B66F1BA6FCD500C8D7EC /* IndexViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9832B6791BA713E800C8D7EC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9832B67A1BA714F500C8D7EC /* APIHelper.swift */,
+				9832B6761BA7087B00C8D7EC /* EventMonitor.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9832B64E1BA6FA7C00C8D7EC /* Haze@SG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9832B6691BA6FA7C00C8D7EC /* Build configuration list for PBXNativeTarget "Haze@SG" */;
+			buildPhases = (
+				7F74A5F314208F3A21E78ACF /* Check Pods Manifest.lock */,
+				9832B64B1BA6FA7C00C8D7EC /* Sources */,
+				9832B64C1BA6FA7C00C8D7EC /* Frameworks */,
+				9832B64D1BA6FA7C00C8D7EC /* Resources */,
+				AA58F766C2DB10803A4CDEE6 /* Embed Pods Frameworks */,
+				219B81100D65AFE0ED235945 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Haze@SG";
+			productName = "Haze@SG";
+			productReference = 9832B64F1BA6FA7C00C8D7EC /* Haze@SG.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9832B65E1BA6FA7C00C8D7EC /* Haze@SGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9832B66C1BA6FA7C00C8D7EC /* Build configuration list for PBXNativeTarget "Haze@SGTests" */;
+			buildPhases = (
+				9832B65B1BA6FA7C00C8D7EC /* Sources */,
+				9832B65C1BA6FA7C00C8D7EC /* Frameworks */,
+				9832B65D1BA6FA7C00C8D7EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9832B6611BA6FA7C00C8D7EC /* PBXTargetDependency */,
+			);
+			name = "Haze@SGTests";
+			productName = "Haze@SGTests";
+			productReference = 9832B65F1BA6FA7C00C8D7EC /* Haze@SGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9832B6471BA6FA7C00C8D7EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Gisonrg;
+				TargetAttributes = {
+					9832B64E1BA6FA7C00C8D7EC = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					9832B65E1BA6FA7C00C8D7EC = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 9832B64E1BA6FA7C00C8D7EC;
+					};
+				};
+			};
+			buildConfigurationList = 9832B64A1BA6FA7C00C8D7EC /* Build configuration list for PBXProject "Haze@SG" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9832B6461BA6FA7C00C8D7EC;
+			productRefGroup = 9832B6501BA6FA7C00C8D7EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9832B64E1BA6FA7C00C8D7EC /* Haze@SG */,
+				9832B65E1BA6FA7C00C8D7EC /* Haze@SGTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9832B64D1BA6FA7C00C8D7EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9832B6721BA6FCD500C8D7EC /* IndexViewController.xib in Resources */,
+				9832B6571BA6FA7C00C8D7EC /* Images.xcassets in Resources */,
+				9832B65A1BA6FA7C00C8D7EC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9832B65D1BA6FA7C00C8D7EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		219B81100D65AFE0ED235945 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F74A5F314208F3A21E78ACF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA58F766C2DB10803A4CDEE6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9832B64B1BA6FA7C00C8D7EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9832B6551BA6FA7C00C8D7EC /* AppDelegate.swift in Sources */,
+				9832B6711BA6FCD500C8D7EC /* IndexViewController.swift in Sources */,
+				9832B67B1BA714F500C8D7EC /* APIHelper.swift in Sources */,
+				9832B6771BA7087B00C8D7EC /* EventMonitor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9832B65B1BA6FA7C00C8D7EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9832B6661BA6FA7C00C8D7EC /* Haze_SGTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9832B6611BA6FA7C00C8D7EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9832B64E1BA6FA7C00C8D7EC /* Haze@SG */;
+			targetProxy = 9832B6601BA6FA7C00C8D7EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9832B6581BA6FA7C00C8D7EC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9832B6591BA6FA7C00C8D7EC /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9832B6671BA6FA7C00C8D7EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9832B6681BA6FA7C00C8D7EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9832B66A1BA6FA7C00C8D7EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Haze@SG/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9832B66B1BA6FA7C00C8D7EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27E843C37512E364F8BB5592 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Haze@SG/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9832B66D1BA6FA7C00C8D7EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Haze@SGTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haze@SG.app/Contents/MacOS/Haze@SG";
+			};
+			name = Debug;
+		};
+		9832B66E1BA6FA7C00C8D7EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Haze@SGTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haze@SG.app/Contents/MacOS/Haze@SG";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9832B64A1BA6FA7C00C8D7EC /* Build configuration list for PBXProject "Haze@SG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9832B6671BA6FA7C00C8D7EC /* Debug */,
+				9832B6681BA6FA7C00C8D7EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9832B6691BA6FA7C00C8D7EC /* Build configuration list for PBXNativeTarget "Haze@SG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9832B66A1BA6FA7C00C8D7EC /* Debug */,
+				9832B66B1BA6FA7C00C8D7EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9832B66C1BA6FA7C00C8D7EC /* Build configuration list for PBXNativeTarget "Haze@SGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9832B66D1BA6FA7C00C8D7EC /* Debug */,
+				9832B66E1BA6FA7C00C8D7EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9832B6471BA6FA7C00C8D7EC /* Project object */;
+}
