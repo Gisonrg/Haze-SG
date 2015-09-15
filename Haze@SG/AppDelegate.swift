@@ -24,7 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = Selector("togglePopover:")
         }
         
-        popover.contentViewController = IndexViewController(nibName: "IndexViewController", bundle: nil)
+        let indexController = IndexViewController(nibName: "IndexViewController", bundle: nil)!
+        popover.contentViewController = indexController
         
         eventMonitor = EventMonitor(mask: .LeftMouseDownMask | .RightMouseDownMask) { [unowned self] event in
             if self.popover.shown {

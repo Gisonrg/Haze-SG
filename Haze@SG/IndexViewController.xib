@@ -6,14 +6,116 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IndexViewController" customModule="Haze_SG" customModuleProvider="target">
             <connections>
+                <outlet property="centralLabel" destination="vT2-zB-7SA" id="5X0-nW-7re"/>
+                <outlet property="eastLabel" destination="310-YG-bwq" id="saQ-lQ-5EB"/>
+                <outlet property="healthLevelView" destination="FRq-2O-8gt" id="aMc-sI-4mj"/>
+                <outlet property="nationalReadingLabel" destination="gk9-sQ-yGk" id="ah0-uV-6rJ"/>
+                <outlet property="northLabel" destination="7dp-tv-5ss" id="IDN-kt-dQP"/>
+                <outlet property="southLabel" destination="BYi-Lo-9r2" id="76s-dL-0rG"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="westLabel" destination="bYv-cV-2Yy" id="RYi-a2-lnM"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+        <customView wantsLayer="YES" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="450"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FRq-2O-8gt">
+                    <rect key="frame" x="0.0" y="218" width="320" height="232"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gk9-sQ-yGk">
+                            <rect key="frame" x="39" y="-9" width="242" height="251"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="157" id="P3a-89-4He">
+                                <font key="font" size="130" name="OpenSans-Light"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                </customView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dp-tv-5ss">
+                    <rect key="frame" x="123" y="145" width="74" height="50"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="111" id="ZYZ-xK-gWN">
+                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Bd-5P-ARh">
+                    <rect key="frame" x="232" y="117" width="56" height="20"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="East" usesSingleLineMode="YES" id="wbF-Mb-1UE">
+                        <font key="font" size="17" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="310-YG-bwq">
+                    <rect key="frame" x="223" y="85" width="74" height="50"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="111" id="0SA-n2-q4m">
+                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYi-Lo-9r2">
+                    <rect key="frame" x="123" y="25" width="74" height="50"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="111" id="jeH-CA-AFU">
+                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYv-cV-2Yy">
+                    <rect key="frame" x="23" y="85" width="74" height="50"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="111" id="Rx4-I9-E8o">
+                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vT2-zB-7SA">
+                    <rect key="frame" x="123" y="85" width="74" height="50"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="111" id="UXz-Bh-DFZ">
+                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K0m-MK-Cf5">
+                    <rect key="frame" x="32" y="117" width="56" height="20"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="West" usesSingleLineMode="YES" id="PUQ-Jn-wcI">
+                        <font key="font" size="17" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rvi-uU-CIW">
+                    <rect key="frame" x="132" y="177" width="56" height="20"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="North" usesSingleLineMode="YES" id="EOX-Cl-pHq">
+                        <font key="font" size="17" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIS-cX-gRa">
+                    <rect key="frame" x="126" y="117" width="68" height="20"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Central" usesSingleLineMode="YES" id="DZs-T8-iZb">
+                        <font key="font" size="17" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1y-pw-yRC">
+                    <rect key="frame" x="132" y="57" width="56" height="20"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="South" usesSingleLineMode="YES" id="9Sz-ma-qnN">
+                        <font key="font" size="17" name="OpenSans-Light"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
             <point key="canvasLocation" x="268" y="291"/>
         </customView>
     </objects>

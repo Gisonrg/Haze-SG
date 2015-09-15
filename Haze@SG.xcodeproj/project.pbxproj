@@ -19,6 +19,10 @@
 		9832B6721BA6FCD500C8D7EC /* IndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6701BA6FCD500C8D7EC /* IndexViewController.xib */; };
 		9832B6771BA7087B00C8D7EC /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6761BA7087B00C8D7EC /* EventMonitor.swift */; };
 		9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B67A1BA714F500C8D7EC /* ApiManager.swift */; };
+		9832B67D1BA863CF00C8D7EC /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B67C1BA863CF00C8D7EC /* AppConstant.swift */; };
+		9832B6811BA868A100C8D7EC /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9832B67F1BA868A100C8D7EC /* OpenSans-Light.ttf */; };
+		9832B6821BA868A100C8D7EC /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6801BA868A100C8D7EC /* OpenSans-Regular.ttf */; };
+		9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */; };
 		F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E647CA0C2A393ACF01813A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -50,6 +54,10 @@
 		9832B6701BA6FCD500C8D7EC /* IndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexViewController.xib; sourceTree = "<group>"; };
 		9832B6761BA7087B00C8D7EC /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		9832B67A1BA714F500C8D7EC /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		9832B67C1BA863CF00C8D7EC /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		9832B67F1BA868A100C8D7EC /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		9832B6801BA868A100C8D7EC /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
 		9E647CA0C2A393ACF01813A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +130,7 @@
 		9832B6511BA6FA7C00C8D7EC /* Haze@SG */ = {
 			isa = PBXGroup;
 			children = (
+				9832B67E1BA868A100C8D7EC /* Font */,
 				1253A9F11BA7C3FE008AF6C0 /* Model */,
 				9832B6791BA713E800C8D7EC /* Util */,
 				9832B6781BA713D900C8D7EC /* Controller */,
@@ -182,8 +191,19 @@
 				9832B6761BA7087B00C8D7EC /* EventMonitor.swift */,
 				1253A9ED1BA7B071008AF6C0 /* Config.swift */,
 				1253A9EF1BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift */,
+				9832B67C1BA863CF00C8D7EC /* AppConstant.swift */,
+				9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		9832B67E1BA868A100C8D7EC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9832B67F1BA868A100C8D7EC /* OpenSans-Light.ttf */,
+				9832B6801BA868A100C8D7EC /* OpenSans-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +289,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9832B6821BA868A100C8D7EC /* OpenSans-Regular.ttf in Resources */,
 				9832B6721BA6FCD500C8D7EC /* IndexViewController.xib in Resources */,
 				9832B6571BA6FA7C00C8D7EC /* Images.xcassets in Resources */,
+				9832B6811BA868A100C8D7EC /* OpenSans-Light.ttf in Resources */,
 				9832B65A1BA6FA7C00C8D7EC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,10 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9832B67D1BA863CF00C8D7EC /* AppConstant.swift in Sources */,
 				1253A9F31BA7C4C6008AF6C0 /* PsiReading.swift in Sources */,
 				9832B6551BA6FA7C00C8D7EC /* AppDelegate.swift in Sources */,
 				9832B6711BA6FCD500C8D7EC /* IndexViewController.swift in Sources */,
 				1253A9EE1BA7B071008AF6C0 /* Config.swift in Sources */,
+				9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */,
 				1253A9F01BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift in Sources */,
 				9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */,
 				1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */,

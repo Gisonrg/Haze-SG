@@ -9,8 +9,8 @@
 import Foundation
 
 class PsiData: Printable {
-    var updatedTime: NSDate
-    var readings: [PsiReading]
+    private(set) var updatedTime: NSDate
+    private(set) var readings: [PsiReading]
     
     init(time: NSDate, readings: [PsiReading]) {
         self.updatedTime = time

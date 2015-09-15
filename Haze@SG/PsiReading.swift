@@ -18,8 +18,8 @@ enum Region: String {
 }
 
 class PsiReading: Printable {
-    let keyFor24HrsPsi = "NPSI"
-    let keyFor3HrsPsi = "NPSI_PM25_3HR"
+    private let keyFor24HrsPsi = "NPSI"
+    private let keyFor3HrsPsi = "NPSI_PM25_3HR"
     
     private(set) var region: Region
     private var readings: Dictionary<String, Double> = Dictionary()
