@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="centralLabel" destination="vT2-zB-7SA" id="5X0-nW-7re"/>
                 <outlet property="eastLabel" destination="310-YG-bwq" id="saQ-lQ-5EB"/>
+                <outlet property="healthLevelLabel" destination="dfx-hJ-zmu" id="ooj-98-fRl"/>
                 <outlet property="healthLevelView" destination="FRq-2O-8gt" id="aMc-sI-4mj"/>
                 <outlet property="nationalReadingLabel" destination="gk9-sQ-yGk" id="ah0-uV-6rJ"/>
                 <outlet property="northLabel" destination="7dp-tv-5ss" id="IDN-kt-dQP"/>
@@ -30,6 +31,22 @@
                             <rect key="frame" x="39" y="-9" width="242" height="251"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="--" id="P3a-89-4He">
                                 <font key="font" size="130" name="OpenSans-Light"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfx-hJ-zmu">
+                            <rect key="frame" x="41" y="-39" width="238" height="108"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" id="b1X-4E-esA">
+                                <font key="font" size="30" name="OpenSans-Light"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z9q-2N-3yT">
+                            <rect key="frame" x="41" y="174" width="238" height="42"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="PSI" id="rPO-wc-XMK">
+                                <font key="font" size="25" name="OpenSans-Light"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>

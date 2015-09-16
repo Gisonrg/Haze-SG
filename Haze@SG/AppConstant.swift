@@ -14,13 +14,27 @@ struct AppConstant {
     static func statusBarItemAttributeForValue(value: String) -> Dictionary<NSObject, AnyObject> {
         return [NSForegroundColorAttributeName : AppColor.colorForPsi(value.toDouble())]
     }
+    
+    static func healthLevelForPsi(value: Double) -> String {
+        if value <= 50 {
+            return "Good"
+        } else if value <= 100 {
+            return "Moderate"
+        } else if value <= 200 {
+            return "Unhealthy"
+        } else if value <= 300 {
+            return "Very Unhealthy"
+        } else {
+            return "Hazardous"
+        }
+    }
 }
 
 struct AppColor {
     static let backgroundColor = NSColor(netHex:0x95A5A6)
     static let psiGoodLevelColor = NSColor(netHex:0x2ECC71)
     static let psiModerateLevelColor = NSColor(netHex:0x3498DB)
-    static let psiUnhealthyLevelColor = NSColor(netHex:0xF39C12)
+    static let psiUnhealthyLevelColor = NSColor(netHex:0xF1C40F)
     static let psiVeryUnhealthyLevelColor = NSColor(netHex:0xE67E22)
     static let psiHazardousLevelColor = NSColor(netHex:0xC0392B)
     
