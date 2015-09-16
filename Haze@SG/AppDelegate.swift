@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     let popover = NSPopover()
+    let indexController = IndexViewController(nibName: "IndexViewController", bundle: nil)!
     
     var eventMonitor: EventMonitor?
 
@@ -22,8 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusItem.button {
             button.action = Selector("togglePopover:")
         }
-        
-        let indexController = IndexViewController(nibName: "IndexViewController", bundle: nil)!
+
         popover.contentViewController = indexController
         indexController.statusBarItem = statusItem.button
         
@@ -40,6 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         ApiManager.getData { (data, error) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
                 if let psiData = data {
+                    self.indexController.currentPsiData = data
                     let displayValue = psiData.getNationalReading()
                     if let button = self.statusItem.button {
                         let attributes = AppConstant.statusBarItemAttributeForValue(displayValue)

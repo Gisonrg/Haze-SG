@@ -22,8 +22,7 @@ class IndexViewController: NSViewController {
     
     private let spinner = NSProgressIndicator()
     
-    private var currentPsiData: PsiData?
-    
+    var currentPsiData: PsiData?
     
     var statusBarItem: NSStatusBarButton?
     
@@ -50,10 +49,10 @@ class IndexViewController: NSViewController {
     override func viewWillAppear() {
         if let data = currentPsiData {
             changeBackgroundColor(AppColor.colorForPsi(data.getNationalReading().toDouble()))
+            updateDisplay(data)
         } else {
             changeBackgroundColor(AppColor.backgroundColor)
         }
-
     }
     
     func getPsiData() {
