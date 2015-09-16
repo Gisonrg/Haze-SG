@@ -20,7 +20,7 @@ struct AppColor {
     static let backgroundColor = NSColor(netHex:0x95A5A6)
     static let psiGoodLevelColor = NSColor(netHex:0x2ECC71)
     static let psiModerateLevelColor = NSColor(netHex:0x3498DB)
-    static let psiUnhealthyLevelColor = NSColor(netHex:0xf39c12)
+    static let psiUnhealthyLevelColor = NSColor(netHex:0xF39C12)
     static let psiVeryUnhealthyLevelColor = NSColor(netHex:0xE67E22)
     static let psiHazardousLevelColor = NSColor(netHex:0xC0392B)
     

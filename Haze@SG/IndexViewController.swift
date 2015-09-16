@@ -18,14 +18,25 @@ class IndexViewController: NSViewController {
     @IBOutlet weak var southLabel: NSTextField!
     @IBOutlet weak var eastLabel: NSTextField!
     
+    private let spinner = NSProgressIndicator()
+    
     private var currentPsiData: PsiData?
+    
     
     var statusBarItem: NSStatusBarButton?
     
     override func viewDidLoad() {
-        getPsiData()
         self.view.wantsLayer = true
         self.healthLevelView.wantsLayer = true
+        
+        // configure spinner
+        spinner.style = .SpinningStyle
+        spinner.frame = self.view.frame
+        self.view.addSubview(spinner)
+        spinner.startAnimation(self)
+        
+        // initializtion data receiving
+        getPsiData()
     }
     
     override func viewWillAppear() {
@@ -39,6 +50,8 @@ class IndexViewController: NSViewController {
                     self.displayAlert("Oops...", details: AppConstant.error_message_network)
                 } else {
                     if let psiData = data {
+                        self.spinner.stopAnimation(self)
+                        self.spinner.removeFromSuperview()
                         self.updateDisplay(psiData)
                     }
                 }
