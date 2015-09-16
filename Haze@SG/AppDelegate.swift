@@ -60,6 +60,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         let attributes = AppConstant.statusBarItemAttributeForValue(displayValue)
                         button.attributedTitle = NSMutableAttributedString(string: displayValue, attributes: attributes)
                     }
+                } else {
+                    println("No data received")
+                    // no data received, display icon.
+                    if let button = self.statusItem.button {
+                        button.image = NSImage(named: "haze")
+                    }
                 }
             }
         }

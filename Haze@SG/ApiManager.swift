@@ -20,8 +20,16 @@ class ApiManager {
     class func getData(handler: CompletionHandler) {
         Alamofire.request(.GET, baseURL + Config.apiKey)
             .responseXMLDocument { request, response, data, error in
+                // check error
                 if error != nil {
-                    handler(nil, error)
+                    return handler(nil, error)
+                }
+                
+                // check response code
+                if let res = response {
+                    if res.statusCode == 403 {
+                        return handler(nil, nil)
+                    }
                 }
                 
                 if let result = data {
@@ -44,10 +52,12 @@ class ApiManager {
                     formatter.timeZone = NSTimeZone.localTimeZone()
                     let time = formatter.dateFromString(updateTime!)!
                     let psiData = PsiData(time: time, readings: psiReadingCollection)
-                    handler(psiData, nil)
+                    
+                    return handler(psiData, nil)
                 } else {
-                    handler(nil, nil)
+                    return handler(nil, nil)
                 }
+
         }
     }
 }

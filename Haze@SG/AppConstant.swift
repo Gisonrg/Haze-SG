@@ -11,7 +11,10 @@ import Cocoa
 struct AppConstant {
     static let timedTaskFrequency: NSTimeInterval = 60 * 15 // 15 mins, in seconds
     
-    static let error_message_network = "Something wrong with the Internet connection"
+    static let error_message_network = "Seems something wrong with the Internet connection.\n" +
+                                        "Maybe you forget to connect your WiFi?"
+    static let error_message_data = "Seems something wrong with the data received.\n" +
+                                    "Sorry for the inconvenience caused by NEA :("
     
     static func statusBarItemAttributeForValue(value: String) -> Dictionary<NSObject, AnyObject> {
         return [NSForegroundColorAttributeName : AppColor.colorForPsi(value.toDouble())]

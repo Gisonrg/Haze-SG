@@ -42,6 +42,7 @@ class IndexViewController: NSViewController {
     
     override func viewWillAppear() {
         if let data = currentPsiData {
+            spinner.stopAnimation(self)
             changeBackgroundColor(AppColor.colorForPsi(data.getNationalReading().toDouble()))
             updateDisplay(data)
         } else {
@@ -62,9 +63,9 @@ class IndexViewController: NSViewController {
                     self.displayAlert("Oops...", details: AppConstant.error_message_network)
                 } else {
                     if let psiData = data {
-                        self.spinner.stopAnimation(self)
-                        self.spinner.removeFromSuperview()
                         self.updateDisplay(psiData)
+                    } else {
+                        self.displayAlert("Oops...", details: AppConstant.error_message_data)
                     }
                 }
             }
@@ -72,6 +73,8 @@ class IndexViewController: NSViewController {
     }
     
     private func updateDisplay(data: PsiData) {
+        self.spinner.stopAnimation(self)
+        self.spinner.removeFromSuperview()
         currentPsiData = data
         for reading in data.readings {
             switch(reading.region) {
@@ -107,6 +110,13 @@ class IndexViewController: NSViewController {
         formatter.timeZone = NSTimeZone.localTimeZone()
         let time = formatter.stringFromDate(data.updatedTime)
         timeLabel.stringValue = "Updated on \(time)"
+    }
+    
+    private func showUnsuccessfulView() {
+        self.spinner.stopAnimation(self)
+        self.spinner.removeFromSuperview()
+        
+        // TODO
     }
     
     private func changeBackgroundColor(color: NSColor) {

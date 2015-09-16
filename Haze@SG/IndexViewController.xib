@@ -56,7 +56,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dp-tv-5ss">
                     <rect key="frame" x="123" y="145" width="74" height="50"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="--" id="ZYZ-xK-gWN">
-                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <font key="font" size="28" name="OpenSans"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -72,7 +72,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="310-YG-bwq">
                     <rect key="frame" x="223" y="85" width="74" height="50"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="--" id="0SA-n2-q4m">
-                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <font key="font" size="28" name="OpenSans"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -80,7 +80,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYi-Lo-9r2">
                     <rect key="frame" x="123" y="25" width="74" height="50"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="--" id="jeH-CA-AFU">
-                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <font key="font" size="28" name="OpenSans"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -88,7 +88,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYv-cV-2Yy">
                     <rect key="frame" x="23" y="85" width="74" height="50"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="--" id="Rx4-I9-E8o">
-                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <font key="font" size="28" name="OpenSans"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -96,7 +96,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vT2-zB-7SA">
                     <rect key="frame" x="123" y="85" width="74" height="50"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="--" id="UXz-Bh-DFZ">
-                        <font key="font" size="28" name="OpenSans-Light"/>
+                        <font key="font" size="28" name="OpenSans"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
