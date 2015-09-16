@@ -12,6 +12,7 @@
                 <outlet property="nationalReadingLabel" destination="gk9-sQ-yGk" id="ah0-uV-6rJ"/>
                 <outlet property="northLabel" destination="7dp-tv-5ss" id="IDN-kt-dQP"/>
                 <outlet property="southLabel" destination="BYi-Lo-9r2" id="76s-dL-0rG"/>
+                <outlet property="timeLabel" destination="xCn-Ql-TbV" id="UbO-ws-nqJ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="westLabel" destination="bYv-cV-2Yy" id="RYi-a2-lnM"/>
             </connections>
@@ -113,6 +114,14 @@
                         <font key="font" size="17" name="OpenSans-Light"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-Ql-TbV">
+                    <rect key="frame" x="60" y="0.0" width="200" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Updated:" id="Vdd-2D-VxT">
+                        <font key="font" metaFont="system" size="10"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
                 </textField>
             </subviews>

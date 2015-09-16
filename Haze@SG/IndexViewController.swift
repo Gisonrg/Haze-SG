@@ -17,6 +17,7 @@ class IndexViewController: NSViewController {
     @IBOutlet weak var centralLabel: NSTextField!
     @IBOutlet weak var southLabel: NSTextField!
     @IBOutlet weak var eastLabel: NSTextField!
+    @IBOutlet weak var timeLabel: NSTextField!
     
     private let spinner = NSProgressIndicator()
     
@@ -81,6 +82,13 @@ class IndexViewController: NSViewController {
                     }
             }
         }
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MM-dd hh:mm"
+        formatter.timeZone = NSTimeZone.localTimeZone()
+        let time = formatter.stringFromDate(data.updatedTime)
+        println(data.updatedTime)
+        timeLabel.stringValue = "Updated on \(time)"
     }
     
     private func displayAlert(title:String, details:String) {
