@@ -9,6 +9,8 @@
 import Cocoa
 
 struct AppConstant {
+    static let timedTaskFrequency: NSTimeInterval = 60 * 15 // 15 mins, in seconds
+    
     static let error_message_network = "Something wrong with the Internet connection"
     
     static func statusBarItemAttributeForValue(value: String) -> Dictionary<NSObject, AnyObject> {

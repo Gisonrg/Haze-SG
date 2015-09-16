@@ -23,7 +23,6 @@ class IndexViewController: NSViewController {
     private let spinner = NSProgressIndicator()
     
     var currentPsiData: PsiData?
-    
     var statusBarItem: NSStatusBarButton?
     
     override func viewDidLoad() {
@@ -33,17 +32,12 @@ class IndexViewController: NSViewController {
         // configure spinner
         spinner.style = .SpinningStyle
         spinner.frame = self.view.frame
-        self.view.addSubview(spinner)
-        spinner.startAnimation(self)
         
         // add a line separator
         let lineView = NSView(frame: CGRect(x: 0, y: 220, width: self.view.frame.width, height: 2))
         lineView.wantsLayer = true
         lineView.layer?.backgroundColor = NSColor.whiteColor().CGColor
         self.view.addSubview(lineView)
-        
-        // initializtion data receiving
-        getPsiData()
     }
     
     override func viewWillAppear() {
@@ -51,11 +45,17 @@ class IndexViewController: NSViewController {
             changeBackgroundColor(AppColor.colorForPsi(data.getNationalReading().toDouble()))
             updateDisplay(data)
         } else {
+            // No cached data, initializtion data receiving
+            // Display the spinner
+            self.view.addSubview(spinner)
+            spinner.startAnimation(self)
+            
+            getPsiData()
             changeBackgroundColor(AppColor.backgroundColor)
         }
     }
     
-    func getPsiData() {
+    private func getPsiData() {
         ApiManager.getData { (data, error) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
                 if error != nil {
@@ -86,17 +86,18 @@ class IndexViewController: NSViewController {
                 case .Central:
                     centralLabel.stringValue = reading.get24HrsPsi()
                 case .National:
-                    nationalReadingLabel.stringValue = reading.get24HrsPsi()
+                    let displayValue = reading.get24HrsPsi()
+                    nationalReadingLabel.stringValue = displayValue
                     // Update status bar display
                     if let button = statusBarItem {
-                        let attributes = AppConstant.statusBarItemAttributeForValue(reading.get24HrsPsi())
-                        button.attributedTitle = NSMutableAttributedString(string: reading.get24HrsPsi(), attributes: attributes)
+                        let attributes = AppConstant.statusBarItemAttributeForValue(displayValue)
+                        button.attributedTitle = NSMutableAttributedString(string: displayValue, attributes: attributes)
                     }
                     // change background color as the PSI level
-                    changeBackgroundColor(AppColor.colorForPsi(reading.get24HrsPsi().toDouble()))
+                    changeBackgroundColor(AppColor.colorForPsi(displayValue.toDouble()))
                 
                     // update health level label as the PSI level
-                    healthLevelLabel.stringValue = AppConstant.healthLevelForPsi(reading.get24HrsPsi().toDouble())
+                    healthLevelLabel.stringValue = AppConstant.healthLevelForPsi(displayValue.toDouble())
             }
         }
         
@@ -119,9 +120,4 @@ class IndexViewController: NSViewController {
         alert.informativeText = details
         alert.runModal()
     }
-}
-
-// MARK: Actions
-extension IndexViewController {
-
 }

@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = NSPopover()
     let indexController = IndexViewController(nibName: "IndexViewController", bundle: nil)!
     
+    var timer: NSTimer?
     var eventMonitor: EventMonitor?
 
     func applicationDidFinishLaunching(notification: NSNotification) {
@@ -33,10 +34,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         eventMonitor?.start()
-        initStatusBarItemApperance()
+        
+        // run the timed task to get data
+        startScheduledWork()
     }
     
-    func initStatusBarItemApperance() {
+    func startScheduledWork() {
+        getDataAndChangeApperance()
+
+        let interval = AppConstant.timedTaskFrequency
+        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: "getData:", userInfo: nil, repeats: true)
+    }
+    
+    func getData(timer: NSTimer) {
+        getDataAndChangeApperance()
+    }
+    
+    func getDataAndChangeApperance() {
         ApiManager.getData { (data, error) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
                 if let psiData = data {
@@ -52,7 +66,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        timer?.invalidate()
     }
     
     func showPopover(sender: AnyObject?) {
