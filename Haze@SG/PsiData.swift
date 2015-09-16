@@ -17,6 +17,15 @@ class PsiData: Printable {
         self.readings = readings
     }
     
+    func getNationalReading() -> String {
+        for reading in readings {
+            if reading.region == .National {
+                return reading.get24HrsPsi()
+            }
+        }
+        return ""
+    }
+    
     var description: String {
         get {
             return "\(updatedTime) : \(readings)"

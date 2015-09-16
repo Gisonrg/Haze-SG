@@ -32,7 +32,7 @@ class ApiManager {
                         updateTime = reginData["record"].element?.attributes["timestamp"]
                         for reading in reginData["record"].children {
                             let readingType = reading.element!.attributes["type"]!
-                            let readingValue = (reading.element!.attributes["value"]! as NSString).doubleValue
+                            let readingValue = reading.element!.attributes["value"]!
                             psiReading.addReadingWithKey(readingType, value: readingValue)
                         }
                         psiReadingCollection.append(psiReading)

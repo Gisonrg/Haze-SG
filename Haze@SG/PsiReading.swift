@@ -22,21 +22,21 @@ class PsiReading: Printable {
     private let keyFor3HrsPsi = "NPSI_PM25_3HR"
     
     private(set) var region: Region
-    private var readings: Dictionary<String, Double> = Dictionary()
+    private var readings: Dictionary<String, String> = Dictionary()
     
     init(region: Region) {
         self.region = region
     }
     
-    func addReadingWithKey(key: String, value: Double) {
+    func addReadingWithKey(key: String, value: String) {
         readings[key] = value
     }
     
-    func get24HrsPsi() -> Double {
+    func get24HrsPsi() -> String {
         return readings[keyFor24HrsPsi]!
     }
     
-    func get3HrsPsi() -> Double {
+    func get3HrsPsi() -> String {
         return readings[keyFor3HrsPsi]!
     }
     

@@ -11,6 +11,7 @@
 		1253A9F01BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9EF1BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift */; };
 		1253A9F31BA7C4C6008AF6C0 /* PsiReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9F21BA7C4C6008AF6C0 /* PsiReading.swift */; };
 		1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9F41BA7C71D008AF6C0 /* PsiData.swift */; };
+		12E8E83F1BA9018F005B4F7C /* String+ToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */; };
 		9832B6551BA6FA7C00C8D7EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */; };
 		9832B6571BA6FA7C00C8D7EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6561BA6FA7C00C8D7EC /* Images.xcassets */; };
 		9832B65A1BA6FA7C00C8D7EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6581BA6FA7C00C8D7EC /* MainMenu.xib */; };
@@ -41,6 +42,7 @@
 		1253A9EF1BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+XmlResponse.swift"; sourceTree = "<group>"; };
 		1253A9F21BA7C4C6008AF6C0 /* PsiReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsiReading.swift; sourceTree = "<group>"; };
 		1253A9F41BA7C71D008AF6C0 /* PsiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsiData.swift; sourceTree = "<group>"; };
+		12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToDouble.swift"; sourceTree = "<group>"; };
 		27E843C37512E364F8BB5592 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9832B64F1BA6FA7C00C8D7EC /* Haze@SG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haze@SG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9832B6531BA6FA7C00C8D7EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		12E8E83D1BA8F877005B4F7C /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				9832B67C1BA863CF00C8D7EC /* AppConstant.swift */,
+			);
+			name = Constant;
+			sourceTree = "<group>";
+		};
 		28C05C6C163B50064B9E6EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 		9832B6511BA6FA7C00C8D7EC /* Haze@SG */ = {
 			isa = PBXGroup;
 			children = (
+				12E8E83D1BA8F877005B4F7C /* Constant */,
 				9832B67E1BA868A100C8D7EC /* Font */,
 				1253A9F11BA7C3FE008AF6C0 /* Model */,
 				9832B6791BA713E800C8D7EC /* Util */,
@@ -191,8 +202,8 @@
 				9832B6761BA7087B00C8D7EC /* EventMonitor.swift */,
 				1253A9ED1BA7B071008AF6C0 /* Config.swift */,
 				1253A9EF1BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift */,
-				9832B67C1BA863CF00C8D7EC /* AppConstant.swift */,
 				9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */,
+				12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -368,6 +379,7 @@
 				1253A9F01BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift in Sources */,
 				9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */,
 				1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */,
+				12E8E83F1BA9018F005B4F7C /* String+ToDouble.swift in Sources */,
 				9832B6771BA7087B00C8D7EC /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

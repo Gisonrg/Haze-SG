@@ -20,6 +20,8 @@ class IndexViewController: NSViewController {
     
     private var currentPsiData: PsiData?
     
+    var statusBarItem: NSStatusBarButton?
+    
     override func viewDidLoad() {
         getPsiData()
         self.view.wantsLayer = true
@@ -27,7 +29,7 @@ class IndexViewController: NSViewController {
     }
     
     override func viewWillAppear() {
-        self.view.layer?.backgroundColor = NSColor(netHex:0x95A5A6).CGColor
+        self.view.layer?.backgroundColor = AppColor.backgroundColor.CGColor
     }
     
     func getPsiData() {
@@ -48,17 +50,22 @@ class IndexViewController: NSViewController {
         for reading in data.readings {
             switch(reading.region) {
                 case .North:
-                    northLabel.doubleValue = reading.get24HrsPsi()
+                    northLabel.stringValue = reading.get24HrsPsi()
                 case .South:
-                    southLabel.doubleValue = reading.get24HrsPsi()
+                    southLabel.stringValue = reading.get24HrsPsi()
                 case .West:
-                    westLabel.doubleValue = reading.get24HrsPsi()
+                    westLabel.stringValue = reading.get24HrsPsi()
                 case .East:
-                    eastLabel.doubleValue = reading.get24HrsPsi()
+                    eastLabel.stringValue = reading.get24HrsPsi()
                 case .Central:
-                    centralLabel.doubleValue = reading.get24HrsPsi()
+                    centralLabel.stringValue = reading.get24HrsPsi()
                 case .National:
-                    nationalReadingLabel.doubleValue = reading.get24HrsPsi()
+                    nationalReadingLabel.stringValue = reading.get24HrsPsi()
+                    // Update status bar display
+                    if let button = statusBarItem {
+                        let attributes = AppConstant.statusBarItemAttributeForValue(reading.get24HrsPsi())
+                        button.attributedTitle = NSMutableAttributedString(string: reading.get24HrsPsi(), attributes: attributes)
+                    }
             }
         }
     }

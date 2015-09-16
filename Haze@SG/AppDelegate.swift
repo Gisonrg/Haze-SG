@@ -20,12 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(notification: NSNotification) {
         if let button = statusItem.button {
-            button.image = NSImage(named: "StatusBarButtonImage")
             button.action = Selector("togglePopover:")
         }
         
         let indexController = IndexViewController(nibName: "IndexViewController", bundle: nil)!
         popover.contentViewController = indexController
+        indexController.statusBarItem = statusItem.button
         
         eventMonitor = EventMonitor(mask: .LeftMouseDownMask | .RightMouseDownMask) { [unowned self] event in
             if self.popover.shown {
@@ -33,6 +33,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         eventMonitor?.start()
+        initStatusBarItemApperance()
+    }
+    
+    func initStatusBarItemApperance() {
+        ApiManager.getData { (data, error) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                if let psiData = data {
+                    let displayValue = psiData.getNationalReading()
+                    if let button = self.statusItem.button {
+                        let attributes = AppConstant.statusBarItemAttributeForValue(displayValue)
+                        button.attributedTitle = NSMutableAttributedString(string: displayValue, attributes: attributes)
+                    }
+                }
+            }
+        }
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {
