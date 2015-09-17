@@ -27,7 +27,7 @@ class ApiManager {
                 
                 // check response code
                 if let res = response {
-                    if res.statusCode == 403 {
+                    if res.statusCode != 200 {
                         return handler(nil, nil)
                     }
                 }
@@ -49,12 +49,15 @@ class ApiManager {
                     psiReadingCollection.append(psiReading)
                 }
                 
+                guard let time = updateTime else {
+                    return handler(nil, nil) // no time data received, bad request
+                }
+                
                 // format update time
                 let formatter = NSDateFormatter()
                 formatter.dateFormat = self.dateFormat
                 formatter.timeZone = NSTimeZone.localTimeZone()
-                let time = formatter.dateFromString(updateTime!)!
-                let psiData = PsiData(time: time, readings: psiReadingCollection)
+                let psiData = PsiData(time: formatter.dateFromString(time)!, readings: psiReadingCollection)
                 
                 return handler(psiData, nil)
         }

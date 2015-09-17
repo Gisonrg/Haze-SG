@@ -9,7 +9,7 @@
 import Cocoa
 
 struct AppConstant {
-    static let timedTaskFrequency: NSTimeInterval = 60 * 15 // 15 mins, in seconds
+    static let timedTaskFrequency: NSTimeInterval = 60 * 5 // 5 mins, in seconds
     
     static let error_message_network = "Seems something wrong with the Internet connection.\n" +
                                         "Maybe you forget to connect your WiFi?"
@@ -21,16 +21,17 @@ struct AppConstant {
     }
     
     static func healthLevelForPsi(value: Double) -> String {
-        if value <= 50 {
-            return "Good"
-        } else if value <= 100 {
-            return "Moderate"
-        } else if value <= 200 {
-            return "Unhealthy"
-        } else if value <= 300 {
-            return "Very Unhealthy"
-        } else {
-            return "Hazardous"
+        switch value {
+            case 0...50:
+                return "Good"
+            case 51...100:
+                return "Moderate"
+            case 101...200:
+                return "Unhealthy"
+            case 201...300:
+                return "Very Unhealthy"
+            default:
+                return "Hazardous"
         }
     }
 }
@@ -44,15 +45,16 @@ struct AppColor {
     static let psiHazardousLevelColor = NSColor(netHex:0xC0392B)
     
     static func colorForPsi(value: Double) -> NSColor {
-        if value <= 50 {
+        switch value {
+        case 0...50:
             return psiGoodLevelColor
-        } else if value <= 100 {
+        case 51...100:
             return psiModerateLevelColor
-        } else if value <= 200 {
+        case 101...200:
             return psiUnhealthyLevelColor
-        } else if value <= 300 {
+        case 201...300:
             return psiVeryUnhealthyLevelColor
-        } else {
+        default:
             return psiHazardousLevelColor
         }
     }

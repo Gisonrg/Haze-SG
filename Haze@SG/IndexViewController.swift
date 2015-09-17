@@ -19,6 +19,7 @@ class IndexViewController: NSViewController {
     @IBOutlet weak var eastLabel: NSTextField!
     @IBOutlet weak var timeLabel: NSTextField!
     @IBOutlet weak var healthLevelLabel: NSTextField!
+    @IBOutlet weak var refreshButton: NSButton!
     
     private let spinner = NSProgressIndicator()
     
@@ -38,6 +39,10 @@ class IndexViewController: NSViewController {
         lineView.wantsLayer = true
         lineView.layer?.backgroundColor = NSColor.whiteColor().CGColor
         self.view.addSubview(lineView)
+        
+        // configure button
+        refreshButton.target = self
+        refreshButton.action = "refreshDataHandler:"
     }
     
     override func viewWillAppear() {
@@ -56,18 +61,25 @@ class IndexViewController: NSViewController {
         }
     }
     
+    func refreshDataHandler(sender: AnyObject?) {
+        getPsiData()
+    }
+    
     private func getPsiData() {
         ApiManager.getData { (data, error) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
-                if error != nil {
+                guard error == nil else {
                     self.displayAlert("Oops...", details: AppConstant.error_message_network)
-                } else {
-                    if let psiData = data {
-                        self.updateDisplay(psiData)
-                    } else {
-                        self.displayAlert("Oops...", details: AppConstant.error_message_data)
-                    }
+                    return
                 }
+                
+                guard let psiData = data else {
+                    self.displayAlert("Oops...", details: AppConstant.error_message_data)
+                    return
+                }
+                
+                print("update data")
+                self.updateDisplay(psiData)
             }
         }
     }

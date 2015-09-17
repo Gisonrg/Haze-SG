@@ -12,6 +12,7 @@
                 <outlet property="healthLevelView" destination="FRq-2O-8gt" id="aMc-sI-4mj"/>
                 <outlet property="nationalReadingLabel" destination="gk9-sQ-yGk" id="ah0-uV-6rJ"/>
                 <outlet property="northLabel" destination="7dp-tv-5ss" id="IDN-kt-dQP"/>
+                <outlet property="refreshButton" destination="MJh-Dc-mht" id="TuB-Iq-u26"/>
                 <outlet property="southLabel" destination="BYi-Lo-9r2" id="76s-dL-0rG"/>
                 <outlet property="timeLabel" destination="xCn-Ql-TbV" id="UbO-ws-nqJ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -134,15 +135,41 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-Ql-TbV">
-                    <rect key="frame" x="60" y="0.0" width="200" height="17"/>
+                    <rect key="frame" x="60" y="3" width="200" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Updated:" id="Vdd-2D-VxT">
-                        <font key="font" metaFont="system" size="10"/>
+                        <font key="font" size="11" name=".HelveticaNeueDeskInterface-Regular"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
                 </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="MJh-Dc-mht">
+                    <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="23" id="PfP-U3-Mpy"/>
+                        <constraint firstAttribute="height" constant="23" id="sEC-DU-2bt"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ic_refresh" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Set-0H-l4y">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
+            <constraints>
+                <constraint firstItem="MJh-Dc-mht" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="YQd-Ol-RGG"/>
+                <constraint firstAttribute="bottom" secondItem="MJh-Dc-mht" secondAttribute="bottom" id="xjj-Fs-Bfd"/>
+            </constraints>
             <point key="canvasLocation" x="268" y="291"/>
         </customView>
+        <button verticalHuggingPriority="750" id="ceB-wS-hEU">
+            <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gQR-gg-SrF">
+                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" metaFont="system"/>
+            </buttonCell>
+        </button>
     </objects>
+    <resources>
+        <image name="ic_refresh" width="24" height="24"/>
+    </resources>
 </document>
