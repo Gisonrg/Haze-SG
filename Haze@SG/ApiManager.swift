@@ -11,7 +11,7 @@ import Foundation
 import Alamofire
 import SWXMLHash
 
-typealias CompletionHandler = (PsiData?, NSError?) -> Void
+typealias CompletionHandler = (PsiData?, ErrorType?) -> Void
 
 class ApiManager {
     private static let baseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=psi_update&keyref="
@@ -19,10 +19,10 @@ class ApiManager {
     
     class func getData(handler: CompletionHandler) {
         Alamofire.request(.GET, baseURL + Config.apiKey)
-            .responseXMLDocument { request, response, data, error in
+            .responseXMLDocument { request, response, result in
                 // check error
-                if error != nil {
-                    return handler(nil, error)
+                guard !result.isFailure else {
+                    return handler(nil, result.error)
                 }
                 
                 // check response code
@@ -32,32 +32,31 @@ class ApiManager {
                     }
                 }
                 
-                if let result = data {
-                    var updateTime: String?
-                    var psiReadingCollection = [PsiReading]()
-                    for reginData in result["channel"]["item"]["region"] {
-                        let psiReading = PsiReading(region: Region(rawValue: reginData["id"].element!.text!)!)
-                        updateTime = reginData["record"].element?.attributes["timestamp"]
-                        for reading in reginData["record"].children {
-                            let readingType = reading.element!.attributes["type"]!
-                            let readingValue = reading.element!.attributes["value"]!
-                            psiReading.addReadingWithKey(readingType, value: readingValue)
-                        }
-                        psiReadingCollection.append(psiReading)
-                    }
-                    
-                    // format update time
-                    let formatter = NSDateFormatter()
-                    formatter.dateFormat = self.dateFormat
-                    formatter.timeZone = NSTimeZone.localTimeZone()
-                    let time = formatter.dateFromString(updateTime!)!
-                    let psiData = PsiData(time: time, readings: psiReadingCollection)
-                    
-                    return handler(psiData, nil)
-                } else {
+                guard let data = result.value else {
                     return handler(nil, nil)
                 }
-
+                
+                var updateTime: String?
+                var psiReadingCollection = [PsiReading]()
+                for reginData in data["channel"]["item"]["region"] {
+                    let psiReading = PsiReading(region: Region(rawValue: reginData["id"].element!.text!)!)
+                    updateTime = reginData["record"].element?.attributes["timestamp"]
+                    for reading in reginData["record"].children {
+                        let readingType = reading.element!.attributes["type"]!
+                        let readingValue = reading.element!.attributes["value"]!
+                        psiReading.addReadingWithKey(readingType, value: readingValue)
+                    }
+                    psiReadingCollection.append(psiReading)
+                }
+                
+                // format update time
+                let formatter = NSDateFormatter()
+                formatter.dateFormat = self.dateFormat
+                formatter.timeZone = NSTimeZone.localTimeZone()
+                let time = formatter.dateFromString(updateTime!)!
+                let psiData = PsiData(time: time, readings: psiReadingCollection)
+                
+                return handler(psiData, nil)
         }
     }
 }
