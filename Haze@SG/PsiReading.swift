@@ -17,7 +17,7 @@ enum Region: String {
     case National = "NRS"
 }
 
-class PsiReading: Printable {
+class PsiReading: CustomStringConvertible {
     private let keyFor24HrsPsi = "NPSI"
     private let keyFor3HrsPsi = "NPSI_PM25_3HR"
     

@@ -27,8 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         popover.contentViewController = indexController
         indexController.statusBarItem = statusItem.button
-        
-        eventMonitor = EventMonitor(mask: .LeftMouseDownMask | .RightMouseDownMask) { [unowned self] event in
+       
+        eventMonitor = EventMonitor(mask:  NSEventMask.LeftMouseDownMask.union(NSEventMask.RightMouseDownMask) ) { [unowned self] event in
             if self.popover.shown {
                 self.closePopover(event)
             }
@@ -61,7 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         button.attributedTitle = NSMutableAttributedString(string: displayValue, attributes: attributes)
                     }
                 } else {
-                    println("No data received")
+                    print("No data received")
                     // no data received, display icon.
                     if let button = self.statusItem.button {
                         button.image = NSImage(named: "haze")
@@ -77,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
-            popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSMinYEdge)
+            popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
             eventMonitor?.start()
         }
     }

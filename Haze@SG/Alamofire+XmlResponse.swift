@@ -13,16 +13,18 @@ import SWXMLHash
 extension Request {
     public static func XMLResponseSerializer() -> GenericResponseSerializer<XMLIndexer> {
         return GenericResponseSerializer { request, response, data in
-            if data == nil {
-                return (nil, nil)
+            guard let validData = data else {
+                let failureReason = "Data could not be serialized. Input data was nil."
+                let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+                return .Failure(data, error)
             }
             
-            let xml = SWXMLHash.parse(data!)
-            return (xml, nil)
+            let xml = SWXMLHash.parse(validData)
+            return .Success(xml)
         }
     }
     
-    public func responseXMLDocument(completionHandler: (NSURLRequest, NSHTTPURLResponse?, XMLIndexer?, NSError?) -> Void) -> Self {
+    public func responseXMLDocument(completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<XMLIndexer>) -> Void) -> Self {
         return response(responseSerializer: Request.XMLResponseSerializer(), completionHandler: completionHandler)
     }
 }

@@ -16,7 +16,7 @@ struct AppConstant {
     static let error_message_data = "Seems something wrong with the data received.\n" +
                                     "Sorry for the inconvenience caused by NEA :("
     
-    static func statusBarItemAttributeForValue(value: String) -> Dictionary<NSObject, AnyObject> {
+    static func statusBarItemAttributeForValue(value: String) -> Dictionary<String, AnyObject> {
         return [NSForegroundColorAttributeName : AppColor.colorForPsi(value.toDouble())]
     }
     

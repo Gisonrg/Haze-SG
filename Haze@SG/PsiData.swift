@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PsiData: Printable {
+class PsiData: CustomStringConvertible {
     private(set) var updatedTime: NSDate
     private(set) var readings: [PsiReading]
     
