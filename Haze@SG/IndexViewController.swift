@@ -93,6 +93,7 @@ class IndexViewController: NSViewController {
                     nationalReadingLabel.stringValue = displayValue
                     // Update status bar display
                     if let button = statusBarItem {
+                        button.image = nil
                         let attributes = AppConstant.statusBarItemAttributeForValue(displayValue)
                         button.attributedTitle = NSMutableAttributedString(string: displayValue, attributes: attributes)
                     }

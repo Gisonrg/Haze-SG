@@ -57,11 +57,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     self.indexController.currentPsiData = data
                     let displayValue = psiData.getNationalReading()
                     if let button = self.statusItem.button {
+                        button.image = nil
                         let attributes = AppConstant.statusBarItemAttributeForValue(displayValue)
                         button.attributedTitle = NSMutableAttributedString(string: displayValue, attributes: attributes)
                     }
                 } else {
-                    print("No data received")
                     // no data received, display icon.
                     if let button = self.statusItem.button {
                         button.image = NSImage(named: "haze")
