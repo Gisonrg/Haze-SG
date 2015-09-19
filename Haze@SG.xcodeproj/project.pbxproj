@@ -12,6 +12,7 @@
 		1253A9F31BA7C4C6008AF6C0 /* PsiReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9F21BA7C4C6008AF6C0 /* PsiReading.swift */; };
 		1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9F41BA7C71D008AF6C0 /* PsiData.swift */; };
 		12E8E83F1BA9018F005B4F7C /* String+ToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */; };
+		982863FD1BADE735000B6089 /* ContextMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982863FC1BADE735000B6089 /* ContextMenuButton.swift */; settings = {ASSET_TAGS = (); }; };
 		9832B6551BA6FA7C00C8D7EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */; };
 		9832B6571BA6FA7C00C8D7EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6561BA6FA7C00C8D7EC /* Images.xcassets */; };
 		9832B65A1BA6FA7C00C8D7EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6581BA6FA7C00C8D7EC /* MainMenu.xib */; };
@@ -44,6 +45,7 @@
 		1253A9F41BA7C71D008AF6C0 /* PsiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsiData.swift; sourceTree = "<group>"; };
 		12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToDouble.swift"; sourceTree = "<group>"; };
 		27E843C37512E364F8BB5592 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		982863FC1BADE735000B6089 /* ContextMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuButton.swift; sourceTree = "<group>"; };
 		9832B64F1BA6FA7C00C8D7EC /* Haze@SG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haze@SG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9832B6531BA6FA7C00C8D7EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				9832B6701BA6FCD500C8D7EC /* IndexViewController.xib */,
 				9832B6581BA6FA7C00C8D7EC /* MainMenu.xib */,
+				982863FC1BADE735000B6089 /* ContextMenuButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				1253A9F31BA7C4C6008AF6C0 /* PsiReading.swift in Sources */,
 				9832B6551BA6FA7C00C8D7EC /* AppDelegate.swift in Sources */,
 				9832B6711BA6FCD500C8D7EC /* IndexViewController.swift in Sources */,
+				982863FD1BADE735000B6089 /* ContextMenuButton.swift in Sources */,
 				1253A9EE1BA7B071008AF6C0 /* Config.swift in Sources */,
 				9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */,
 				1253A9F01BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift in Sources */,
