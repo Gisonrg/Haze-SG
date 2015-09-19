@@ -20,6 +20,7 @@ class IndexViewController: NSViewController {
     @IBOutlet weak var timeLabel: NSTextField!
     @IBOutlet weak var healthLevelLabel: NSTextField!
     @IBOutlet weak var refreshButton: NSButton!
+    @IBOutlet weak var settingButton: NSButton!
     
     private let spinner = NSProgressIndicator()
     
@@ -43,6 +44,14 @@ class IndexViewController: NSViewController {
         // configure button
         refreshButton.target = self
         refreshButton.action = "refreshDataHandler:"
+        
+        let menu = NSMenu()
+        
+        menu.addItem(NSMenuItem(title: "Setting", action: "showSettingMenu:", keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separatorItem())
+        menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
+        
+        settingButton.menu = menu
     }
     
     override func viewWillAppear() {
@@ -65,6 +74,10 @@ class IndexViewController: NSViewController {
         getPsiData()
     }
     
+    func showSettingMenu(sender: AnyObject?) {
+        print("clicked")
+    }
+    
     private func getPsiData() {
         ApiManager.getData { (data, error) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
@@ -78,7 +91,6 @@ class IndexViewController: NSViewController {
                     return
                 }
                 
-                print("update data")
                 self.updateDisplay(psiData)
             }
         }

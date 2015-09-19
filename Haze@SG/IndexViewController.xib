@@ -13,6 +13,7 @@
                 <outlet property="nationalReadingLabel" destination="gk9-sQ-yGk" id="ah0-uV-6rJ"/>
                 <outlet property="northLabel" destination="7dp-tv-5ss" id="IDN-kt-dQP"/>
                 <outlet property="refreshButton" destination="MJh-Dc-mht" id="TuB-Iq-u26"/>
+                <outlet property="settingButton" destination="aDT-FR-9dk" id="rfJ-h9-Gib"/>
                 <outlet property="southLabel" destination="BYi-Lo-9r2" id="76s-dL-0rG"/>
                 <outlet property="timeLabel" destination="xCn-Ql-TbV" id="UbO-ws-nqJ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -153,9 +154,22 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="aDT-FR-9dk" customClass="ContextMenuButton" customModule="Haze_SG" customModuleProvider="target">
+                    <rect key="frame" x="299" y="1" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="gr4-7G-YAE"/>
+                        <constraint firstAttribute="width" constant="20" id="lf7-kb-fHd"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ic_settings" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="A8A-mk-0Bl">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="MJh-Dc-mht" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="YQd-Ol-RGG"/>
+                <constraint firstAttribute="bottom" secondItem="aDT-FR-9dk" secondAttribute="bottom" constant="1" id="kET-MO-9YK"/>
+                <constraint firstAttribute="trailing" secondItem="aDT-FR-9dk" secondAttribute="trailing" constant="1" id="lkz-eF-Ezw"/>
                 <constraint firstAttribute="bottom" secondItem="MJh-Dc-mht" secondAttribute="bottom" id="xjj-Fs-Bfd"/>
             </constraints>
             <point key="canvasLocation" x="268" y="291"/>
@@ -171,5 +185,6 @@
     </objects>
     <resources>
         <image name="ic_refresh" width="24" height="24"/>
+        <image name="ic_settings" width="24" height="24"/>
     </resources>
 </document>
