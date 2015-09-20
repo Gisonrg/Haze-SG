@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = NSPopover()
     let indexController = IndexViewController(nibName: "IndexViewController", bundle: nil)!
     
+    var reach: Reachability?
     var timer: NSTimer?
     var eventMonitor: EventMonitor?
 
@@ -34,6 +35,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         eventMonitor?.start()
+        
+        
+        // Reachability setup
+        self.reach = Reachability.reachabilityForInternetConnection()
+        
+        // Set the blocks
+        self.reach!.reachableBlock = {
+            (let reach: Reachability!) -> Void in
+            
+            self.getDataAndChangeApperance()
+        }
+        self.reach!.unreachableBlock = {
+            (let reach: Reachability!) -> Void in
+            self.clearButtonApperance()
+        }
+        self.reach!.startNotifier()
+        
         
         // run the timed task to get data
         startScheduledWork()
@@ -63,11 +81,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     }
                 } else {
                     // no data received, display icon.
-                    if let button = self.statusItem.button {
-                        button.image = NSImage(named: "haze")
-                    }
+                    self.clearButtonApperance()
                 }
             }
+        }
+    }
+    
+    func clearButtonApperance() {
+        if let button = self.statusItem.button {
+            button.image = NSImage(named: "haze")
+            button.attributedTitle = NSAttributedString(string: "")
         }
     }
     

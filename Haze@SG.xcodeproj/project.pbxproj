@@ -26,7 +26,7 @@
 		9832B6821BA868A100C8D7EC /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6801BA868A100C8D7EC /* OpenSans-Regular.ttf */; };
 		9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */; };
 		985F9B181BAF027300D38333 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F9B171BAF027300D38333 /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
-		98ACF81B1BAEEC9400BE0367 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */; };
+		985F9B1C1BAF074B00D38333 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 985F9B1B1BAF074B00D38333 /* SystemConfiguration.framework */; };
 		98ACF81D1BAEF44B00BE0367 /* LaunchStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */; settings = {ASSET_TAGS = (); }; };
 		F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E647CA0C2A393ACF01813A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -68,6 +68,7 @@
 		985F9B151BAF027200D38333 /* Haze@SG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Haze@SG-Bridging-Header.h"; sourceTree = "<group>"; };
 		985F9B161BAF027300D38333 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		985F9B171BAF027300D38333 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		985F9B1B1BAF074B00D38333 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStarter.swift; sourceTree = "<group>"; };
 		9E647CA0C2A393ACF01813A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98ACF81B1BAEEC9400BE0367 /* ServiceManagement.framework in Frameworks */,
+				985F9B1C1BAF074B00D38333 /* SystemConfiguration.framework in Frameworks */,
 				F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +125,7 @@
 		28C05C6C163B50064B9E6EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				985F9B1B1BAF074B00D38333 /* SystemConfiguration.framework */,
 				98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */,
 				9E647CA0C2A393ACF01813A2 /* Pods.framework */,
 			);
