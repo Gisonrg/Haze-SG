@@ -82,7 +82,13 @@ class IndexViewController: NSViewController {
     }
     
     func showSettingMenu(sender: AnyObject?) {
+        let menuItem = sender as! NSMenuItem
         toggleLaunchAtStartup()
+        if (applicationIsInStartUpItems()) {
+            menuItem.state = NSOnState
+        } else {
+            menuItem.state = NSOffState
+        }
     }
     
     private func getPsiData() {
