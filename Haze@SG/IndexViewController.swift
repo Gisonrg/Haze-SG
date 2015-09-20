@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 class IndexViewController: NSViewController {
     
@@ -47,7 +48,7 @@ class IndexViewController: NSViewController {
         
         let menu = NSMenu()
         
-        menu.addItem(NSMenuItem(title: "Setting", action: "showSettingMenu:", keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Start when login", action: "showSettingMenu:", keyEquivalent: ""))
         menu.addItem(NSMenuItem.separatorItem())
         menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
         
@@ -68,6 +69,12 @@ class IndexViewController: NSViewController {
             getPsiData()
             changeBackgroundColor(AppColor.backgroundColor)
         }
+        
+        if (applicationIsInStartUpItems()) {
+            settingButton.menu?.itemAtIndex(0)?.state = NSOnState
+        } else {
+            settingButton.menu?.itemAtIndex(0)?.state = NSOffState
+        }
     }
     
     func refreshDataHandler(sender: AnyObject?) {
@@ -75,7 +82,7 @@ class IndexViewController: NSViewController {
     }
     
     func showSettingMenu(sender: AnyObject?) {
-        print("clicked")
+        toggleLaunchAtStartup()
     }
     
     private func getPsiData() {

@@ -25,6 +25,9 @@
 		9832B6811BA868A100C8D7EC /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9832B67F1BA868A100C8D7EC /* OpenSans-Light.ttf */; };
 		9832B6821BA868A100C8D7EC /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6801BA868A100C8D7EC /* OpenSans-Regular.ttf */; };
 		9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */; };
+		985F9B181BAF027300D38333 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F9B171BAF027300D38333 /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
+		98ACF81B1BAEEC9400BE0367 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */; };
+		98ACF81D1BAEF44B00BE0367 /* LaunchStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */; settings = {ASSET_TAGS = (); }; };
 		F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E647CA0C2A393ACF01813A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,11 @@
 		9832B67F1BA868A100C8D7EC /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		9832B6801BA868A100C8D7EC /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
+		985F9B151BAF027200D38333 /* Haze@SG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Haze@SG-Bridging-Header.h"; sourceTree = "<group>"; };
+		985F9B161BAF027300D38333 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		985F9B171BAF027300D38333 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStarter.swift; sourceTree = "<group>"; };
 		9E647CA0C2A393ACF01813A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98ACF81B1BAEEC9400BE0367 /* ServiceManagement.framework in Frameworks */,
 				F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +124,7 @@
 		28C05C6C163B50064B9E6EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */,
 				9E647CA0C2A393ACF01813A2 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -143,6 +153,7 @@
 		9832B6511BA6FA7C00C8D7EC /* Haze@SG */ = {
 			isa = PBXGroup;
 			children = (
+				985F9B141BAF026800D38333 /* Lib */,
 				12E8E83D1BA8F877005B4F7C /* Constant */,
 				9832B67E1BA868A100C8D7EC /* Font */,
 				1253A9F11BA7C3FE008AF6C0 /* Model */,
@@ -158,6 +169,7 @@
 		9832B6521BA6FA7C00C8D7EC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				985F9B151BAF027200D38333 /* Haze@SG-Bridging-Header.h */,
 				9832B6561BA6FA7C00C8D7EC /* Images.xcassets */,
 				9832B6531BA6FA7C00C8D7EC /* Info.plist */,
 			);
@@ -207,6 +219,7 @@
 				1253A9EF1BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift */,
 				9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */,
 				12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */,
+				98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -218,6 +231,15 @@
 				9832B6801BA868A100C8D7EC /* OpenSans-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		985F9B141BAF026800D38333 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				985F9B161BAF027300D38333 /* Reachability.h */,
+				985F9B171BAF027300D38333 /* Reachability.m */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,11 +400,13 @@
 				1253A9F31BA7C4C6008AF6C0 /* PsiReading.swift in Sources */,
 				9832B6551BA6FA7C00C8D7EC /* AppDelegate.swift in Sources */,
 				9832B6711BA6FCD500C8D7EC /* IndexViewController.swift in Sources */,
+				98ACF81D1BAEF44B00BE0367 /* LaunchStarter.swift in Sources */,
 				982863FD1BADE735000B6089 /* ContextMenuButton.swift in Sources */,
 				1253A9EE1BA7B071008AF6C0 /* Config.swift in Sources */,
 				9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */,
 				1253A9F01BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift in Sources */,
 				9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */,
+				985F9B181BAF027300D38333 /* Reachability.m in Sources */,
 				1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */,
 				12E8E83F1BA9018F005B4F7C /* String+ToDouble.swift in Sources */,
 				9832B6771BA7087B00C8D7EC /* EventMonitor.swift in Sources */,
@@ -505,12 +529,15 @@
 			baseConfigurationReference = D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Haze@SG/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gisonrg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Haze@SG/Haze@SG-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -519,12 +546,14 @@
 			baseConfigurationReference = 27E843C37512E364F8BB5592 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Haze@SG/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gisonrg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Haze@SG/Haze@SG-Bridging-Header.h";
 			};
 			name = Release;
 		};

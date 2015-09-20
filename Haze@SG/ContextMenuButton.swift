@@ -9,12 +9,6 @@
 import Cocoa
 
 class ContextMenuButton: NSButton {
-
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
-
-        // Drawing code here.
-    }
     
     override func mouseDown(theEvent: NSEvent) {
         self.highlight(true)
