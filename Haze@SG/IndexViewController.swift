@@ -64,9 +64,12 @@ class IndexViewController: NSViewController {
         menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
         settingButton.menu = menu
         
+        // add tap region for toggle reading type
         let gestureRecognizer = NSClickGestureRecognizer(target: self, action: "togglePsiType:")
         gestureRecognizer.numberOfClicksRequired = 1
-        nationalReadingLabel.addGestureRecognizer(gestureRecognizer)
+        let tapRegion = NSView(frame: CGRect(x: 0, y: 25, width: self.view.frame.width, height: 425))
+        self.view.addSubview(tapRegion)
+        tapRegion.addGestureRecognizer(gestureRecognizer)
     }
     
     override func viewWillAppear() {
