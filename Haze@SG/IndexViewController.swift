@@ -150,13 +150,6 @@ class IndexViewController: NSViewController {
         timeLabel.stringValue = "Updated on \(time)"
     }
     
-    private func showUnsuccessfulView() {
-        self.spinner.stopAnimation(self)
-        self.spinner.removeFromSuperview()
-        
-        // TODO
-    }
-    
     private func changeBackgroundColor(color: NSColor) {
         self.view.layer?.backgroundColor = color.CGColor
     }
