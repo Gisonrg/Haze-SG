@@ -9,13 +9,18 @@ Haze@SG is an OS X app that resides in your menu bar for quick Singapore Polluta
 ##Download
 [Here](https://github.com/Gisonrg/Haze-SG/releases/download/1.0/Haze.SG.zip)
 
+##Features
+1. Hourly auto-updated readings from NEA.
+2. Color-indicated background to show the health level in one glance.
+3. Launch with system boot. 
+4. Toggle readings between 24hrs reading and 3hrs reading by clicking on anywhere in the app.
+
 ##For Contributor/Developer
 You need to use your own [NEA API key](https://www.nea.gov.sg/api) in the ```Config.swift``` file.
 
 ####Environment
 OS X 10.10 + XCode 7
-
-Swift 2.0
+Developed with Swift 2.0
 
 
 ##Todo
