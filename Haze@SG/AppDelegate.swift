@@ -36,7 +36,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         eventMonitor?.start()
         
-        
         // Reachability setup
         self.reach = Reachability.reachabilityForInternetConnection()
         
@@ -52,6 +51,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         self.reach!.startNotifier()
         
+        // check for default display reading type: 24hrs/3hrs
+        // if the default is not set, set and use 24hrs.
+        if AppConstant.getDefaultReadingType() == nil {
+            NSUserDefaults.standardUserDefaults().setValue(ReadingType.Psi24hrs.rawValue, forKey: AppConstant.keyForReadingType)
+        }
         
         // run the timed task to get data
         startScheduledWork()

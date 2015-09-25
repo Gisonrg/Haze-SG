@@ -8,6 +8,29 @@
 
 import Foundation
 
+enum ReadingType: String {
+    case Psi24hrs = "24hrs"
+    case Psi3hrs = "3hrs"
+    
+    func title() -> String {
+        switch(self) {
+            case .Psi24hrs:
+                return "24-hr PSI"
+            case .Psi3hrs:
+                return "3-hr PSI"
+        }
+    }
+    
+    mutating func toggle() {
+        switch(self) {
+            case .Psi24hrs:
+                self = .Psi3hrs
+            case .Psi3hrs:
+                self = .Psi24hrs
+        }
+    }
+}
+
 class PsiData: CustomStringConvertible {
     private(set) var updatedTime: NSDate
     private(set) var readings: [PsiReading]
@@ -18,11 +41,16 @@ class PsiData: CustomStringConvertible {
     }
     
     func getNationalReading() -> String {
+        guard let type = AppConstant.getDefaultReadingType() else {
+            return ""
+        }
+        
         for reading in readings {
             if reading.region == .National {
-                return reading.get24HrsPsi()
+                return reading.getReading(type)
             }
         }
+        
         return ""
     }
     

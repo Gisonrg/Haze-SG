@@ -9,6 +9,8 @@
 import Cocoa
 
 struct AppConstant {
+    static let keyForReadingType: String = "ReadingType"
+    
     static let timedTaskFrequency: NSTimeInterval = 60 * 5 // 5 mins, in seconds
     
     static let error_message_network = "Seems something wrong with the Internet connection.\n" +
@@ -33,6 +35,14 @@ struct AppConstant {
             default:
                 return "Hazardous"
         }
+    }
+    
+    static func getDefaultReadingType() -> ReadingType? {
+        guard let value = NSUserDefaults.standardUserDefaults().stringForKey(AppConstant.keyForReadingType) else {
+            return nil
+        }
+        
+        return ReadingType(rawValue: value)
     }
 }
 

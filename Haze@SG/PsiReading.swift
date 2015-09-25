@@ -32,6 +32,15 @@ class PsiReading: CustomStringConvertible {
         readings[key] = value
     }
     
+    func getReading(type: ReadingType) -> String {
+        switch(type) {
+            case .Psi24hrs:
+                return self.get24HrsPsi()
+            case .Psi3hrs:
+                return self.get3HrsPsi()
+        }
+    }
+    
     func get24HrsPsi() -> String {
         return readings[keyFor24HrsPsi]!
     }
