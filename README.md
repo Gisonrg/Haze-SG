@@ -6,6 +6,17 @@ Haze@SG is an OS X app that resides in your menu bar for quick Singapore Polluta
 ##Screenshot
 ![Imgur](http://i.imgur.com/YI7YUib.png?1)
 
+##Download
+[Here](https://github.com/Gisonrg/Haze-SG/releases/download/1.0/Haze.SG.zip)
+
+##For Contributor/Developer
+You need to use your own [NEA API key](https://www.nea.gov.sg/api) in the ```Config.swift``` file.
+
+####Environment
+OS X 10.10 + XCode 7
+
+Swift 2.0
+
 
 ##Todo
 1. Add details view for each region.
