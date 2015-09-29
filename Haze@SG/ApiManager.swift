@@ -14,7 +14,7 @@ import SWXMLHash
 typealias CompletionHandler = (PsiData?, ErrorType?) -> Void
 
 class ApiManager {
-    private static let baseURL = "http://www.nea.gov.sg/api/WebAPI?dataset=psi_update&keyref="
+    private static let baseURL = "http://www.nea.gov.sg/api/WebAPI/?dataset=psi_update&keyref="
     private static let dateFormat = "yyyyMMddHHmmss"
     
     class func getData(handler: CompletionHandler) {
