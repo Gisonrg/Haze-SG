@@ -12,7 +12,7 @@
 		1253A9F31BA7C4C6008AF6C0 /* PsiReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9F21BA7C4C6008AF6C0 /* PsiReading.swift */; };
 		1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9F41BA7C71D008AF6C0 /* PsiData.swift */; };
 		12E8E83F1BA9018F005B4F7C /* String+ToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */; };
-		982863FD1BADE735000B6089 /* ContextMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982863FC1BADE735000B6089 /* ContextMenuButton.swift */; settings = {ASSET_TAGS = (); }; };
+		982863FD1BADE735000B6089 /* ContextMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982863FC1BADE735000B6089 /* ContextMenuButton.swift */; };
 		9832B6551BA6FA7C00C8D7EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */; };
 		9832B6571BA6FA7C00C8D7EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6561BA6FA7C00C8D7EC /* Images.xcassets */; };
 		9832B65A1BA6FA7C00C8D7EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9832B6581BA6FA7C00C8D7EC /* MainMenu.xib */; };
@@ -23,11 +23,11 @@
 		9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B67A1BA714F500C8D7EC /* ApiManager.swift */; };
 		9832B67D1BA863CF00C8D7EC /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B67C1BA863CF00C8D7EC /* AppConstant.swift */; };
 		9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */; };
-		985F9B181BAF027300D38333 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F9B171BAF027300D38333 /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
+		985F9B181BAF027300D38333 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F9B171BAF027300D38333 /* Reachability.m */; };
 		985F9B1C1BAF074B00D38333 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 985F9B1B1BAF074B00D38333 /* SystemConfiguration.framework */; };
 		9873433D1BB5BC9C0090D088 /* OpenSans-Light.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9873433B1BB5BC9C0090D088 /* OpenSans-Light.ttf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9873433E1BB5BC9C0090D088 /* OpenSans-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9873433C1BB5BC9C0090D088 /* OpenSans-Regular.ttf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		98ACF81D1BAEF44B00BE0367 /* LaunchStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */; settings = {ASSET_TAGS = (); }; };
+		98ACF81D1BAEF44B00BE0367 /* LaunchStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */; };
 		F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E647CA0C2A393ACF01813A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -312,6 +312,7 @@
 				TargetAttributes = {
 					9832B64E1BA6FA7C00C8D7EC = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 4QY7739P4X;
 					};
 					9832B65E1BA6FA7C00C8D7EC = {
 						CreatedOnToolsVersion = 6.4;
