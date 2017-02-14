@@ -10,11 +10,11 @@ import Cocoa
 
 class ContextMenuButton: NSButton {
     
-    override func mouseDown(theEvent: NSEvent) {
+    override func mouseDown(with theEvent: NSEvent) {
         self.highlight(true)
         self.state = NSOnState
         if let menu = self.menu {
-            NSMenu.popUpContextMenu(menu, withEvent: theEvent, forView: self)
+            NSMenu.popUpContextMenu(menu, with: theEvent, for: self)
         }
         self.state = NSOffState
         self.highlight(false)

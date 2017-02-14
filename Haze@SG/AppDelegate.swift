@@ -13,48 +13,48 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
     
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
+    let statusItem = NSStatusBar.system().statusItem(withLength: -2)
     let popover = NSPopover()
     let indexController = IndexViewController(nibName: "IndexViewController", bundle: nil)!
     
     var reach: Reachability?
-    var timer: NSTimer?
+    var timer: Timer?
     var eventMonitor: EventMonitor?
 
-    func applicationDidFinishLaunching(notification: NSNotification) {
+    func applicationDidFinishLaunching(_ notification: Notification) {
         if let button = statusItem.button {
-            button.action = Selector("togglePopover:")
+            button.action = #selector(AppDelegate.togglePopover(_:))
         }
 
         popover.contentViewController = indexController
         indexController.statusBarItem = statusItem.button
        
-        eventMonitor = EventMonitor(mask:  NSEventMask.LeftMouseDownMask.union(NSEventMask.RightMouseDownMask) ) { [unowned self] event in
-            if self.popover.shown {
+        eventMonitor = EventMonitor(mask:  NSEventMask.leftMouseDown.union(NSEventMask.rightMouseDown) ) { [unowned self] event in
+            if self.popover.isShown {
                 self.closePopover(event)
             }
         }
         eventMonitor?.start()
         
-        // Reachability setup
-        self.reach = Reachability.reachabilityForInternetConnection()
-        
-        // Set the blocks
-        self.reach!.reachableBlock = {
-            (let reach: Reachability!) -> Void in
-            
-            self.getDataAndChangeApperance()
-        }
-        self.reach!.unreachableBlock = {
-            (let reach: Reachability!) -> Void in
-            self.clearButtonApperance()
-        }
-        self.reach!.startNotifier()
+//        // Reachability setup
+//        self.reach = Reachability.forInternetConnection()
+//        
+//        // Set the blocks
+//        self.reach!.reachableBlock = {
+//            (reach: Reachability!) -> Void in
+//            
+//            self.getDataAndChangeApperance()
+//        }
+//        self.reach!.unreachableBlock = {
+//            (reach: Reachability!) -> Void in
+//            self.clearButtonApperance()
+//        }
+//        self.reach!.startNotifier()
         
         // check for default display reading type: 24hrs/3hrs
         // if the default is not set, set and use 24hrs.
         if AppConstant.getDefaultReadingType() == nil {
-            NSUserDefaults.standardUserDefaults().setValue(ReadingType.Psi24hrs.rawValue, forKey: AppConstant.keyForReadingType)
+            UserDefaults.standard.setValue(ReadingType.Psi24hrs.rawValue, forKey: AppConstant.keyForReadingType)
         }
         
         // run the timed task to get data
@@ -65,16 +65,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         getDataAndChangeApperance()
 
         let interval = AppConstant.timedTaskFrequency
-        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: "getData:", userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: "getData:", userInfo: nil, repeats: true)
     }
     
-    func getData(timer: NSTimer) {
+    func getData(_ timer: Timer) {
         getDataAndChangeApperance()
     }
     
     func getDataAndChangeApperance() {
         ApiManager.getData { (data, error) -> Void in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 if let psiData = data {
                     self.indexController.currentPsiData = data
                     let displayValue = psiData.getNationalReading()
@@ -98,24 +98,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         timer?.invalidate()
     }
     
-    func showPopover(sender: AnyObject?) {
+    func showPopover(_ sender: AnyObject?) {
         if let button = statusItem.button {
-            popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             eventMonitor?.start()
         }
     }
     
-    func closePopover(sender: AnyObject?) {
+    func closePopover(_ sender: AnyObject?) {
         popover.performClose(sender)
         eventMonitor?.stop()
     }
     
-    func togglePopover(sender: AnyObject?) {
-        if popover.shown {
+    func togglePopover(_ sender: AnyObject?) {
+        if popover.isShown {
             closePopover(sender)
         } else {
             showPopover(sender)

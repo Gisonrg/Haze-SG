@@ -11,18 +11,18 @@ import Cocoa
 struct AppConstant {
     static let keyForReadingType: String = "ReadingType"
     
-    static let timedTaskFrequency: NSTimeInterval = 60 * 5 // 5 mins, in seconds
+    static let timedTaskFrequency: TimeInterval = 60 * 5 // 5 mins, in seconds
     
     static let error_message_network = "Seems something wrong with the Internet connection.\n" +
                                         "Maybe you forget to connect your WiFi?"
     static let error_message_data = "Seems something wrong with the data received.\n" +
                                     "Sorry for the inconvenience caused by NEA :("
     
-    static func statusBarItemAttributeForValue(value: String) -> Dictionary<String, AnyObject> {
+    static func statusBarItemAttributeForValue(_ value: String) -> Dictionary<String, AnyObject> {
         return [NSForegroundColorAttributeName : AppColor.colorForPsi(value.toDouble())]
     }
     
-    static func healthLevelForPsi(value: Double) -> String {
+    static func healthLevelForPsi(_ value: Double) -> String {
         switch value {
             case 0...50:
                 return "Good"
@@ -38,7 +38,7 @@ struct AppConstant {
     }
     
     static func getDefaultReadingType() -> ReadingType? {
-        guard let value = NSUserDefaults.standardUserDefaults().stringForKey(AppConstant.keyForReadingType) else {
+        guard let value = UserDefaults.standard.string(forKey: AppConstant.keyForReadingType) else {
             return nil
         }
         
@@ -54,7 +54,7 @@ struct AppColor {
     static let psiVeryUnhealthyLevelColor = NSColor(netHex:0xE67E22)
     static let psiHazardousLevelColor = NSColor(netHex:0xC0392B)
     
-    static func colorForPsi(value: Double) -> NSColor {
+    static func colorForPsi(_ value: Double) -> NSColor {
         switch value {
         case 0...50:
             return psiGoodLevelColor

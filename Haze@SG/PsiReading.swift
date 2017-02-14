@@ -18,21 +18,21 @@ enum Region: String {
 }
 
 class PsiReading: CustomStringConvertible {
-    private let keyFor24HrsPsi = "NPSI"
-    private let keyFor3HrsPsi = "NPSI_PM25_3HR"
+    fileprivate let keyFor24HrsPsi = "NPSI"
+    fileprivate let keyFor3HrsPsi = "NPSI_PM25_3HR"
     
-    private(set) var region: Region
-    private var readings: Dictionary<String, String> = Dictionary()
+    fileprivate(set) var region: Region
+    fileprivate var readings: Dictionary<String, String> = Dictionary()
     
     init(region: Region) {
         self.region = region
     }
     
-    func addReadingWithKey(key: String, value: String) {
+    func addReadingWithKey(_ key: String, value: String) {
         readings[key] = value
     }
     
-    func getReading(type: ReadingType) -> String {
+    func getReading(_ type: ReadingType) -> String {
         switch(type) {
             case .Psi24hrs:
                 return self.get24HrsPsi()

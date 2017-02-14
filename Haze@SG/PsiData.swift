@@ -32,10 +32,10 @@ enum ReadingType: String {
 }
 
 class PsiData: CustomStringConvertible {
-    private(set) var updatedTime: NSDate
-    private(set) var readings: [PsiReading]
+    fileprivate(set) var updatedTime: Date
+    fileprivate(set) var readings: [PsiReading]
     
-    init(time: NSDate, readings: [PsiReading]) {
+    init(time: Date, readings: [PsiReading]) {
         self.updatedTime = time
         self.readings = readings
     }

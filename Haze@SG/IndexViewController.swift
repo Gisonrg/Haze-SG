@@ -44,28 +44,28 @@ class IndexViewController: NSViewController {
         setUpFont()
         
         // configure spinner
-        spinner.style = .SpinningStyle
+        spinner.style = .spinningStyle
         spinner.frame = self.view.frame
         
         // add a line separator
         let lineView = NSView(frame: CGRect(x: 0, y: 220, width: self.view.frame.width, height: 2))
         lineView.wantsLayer = true
-        lineView.layer?.backgroundColor = NSColor.whiteColor().CGColor
+        lineView.layer?.backgroundColor = NSColor.white.cgColor
         self.view.addSubview(lineView)
         
         // configure button
         refreshButton.target = self
-        refreshButton.action = "refreshDataHandler:"
+        refreshButton.action = #selector(IndexViewController.refreshDataHandler(_:))
         
         // configure context menu
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Start when login", action: "showSettingMenu:", keyEquivalent: ""))
-        menu.addItem(NSMenuItem.separatorItem())
-        menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Start when login", action: #selector(IndexViewController.showSettingMenu(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+//        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSInputServiceProvider.terminate(_:)), keyEquivalent: "q"))
         settingButton.menu = menu
         
         // add tap region for toggle reading type
-        let gestureRecognizer = NSClickGestureRecognizer(target: self, action: "togglePsiType:")
+        let gestureRecognizer = NSClickGestureRecognizer(target: self, action: #selector(IndexViewController.togglePsiType(_:)))
         gestureRecognizer.numberOfClicksRequired = 1
         let tapRegion = NSView(frame: CGRect(x: 0, y: 25, width: self.view.frame.width, height: 425))
         self.view.addSubview(tapRegion)
@@ -90,11 +90,11 @@ class IndexViewController: NSViewController {
         let currentType = AppConstant.getDefaultReadingType()!
         psiTypeLabel.stringValue = currentType.title()
         
-        if (applicationIsInStartUpItems()) {
-            settingButton.menu?.itemAtIndex(0)?.state = NSOnState
-        } else {
-            settingButton.menu?.itemAtIndex(0)?.state = NSOffState
-        }
+//        if (applicationIsInStartUpItems()) {
+//            settingButton.menu?.item(at: 0)?.state = NSOnState
+//        } else {
+//            settingButton.menu?.item(at: 0)?.state = NSOffState
+//        }
     }
     
     func setUpFont() {
@@ -118,11 +118,11 @@ class IndexViewController: NSViewController {
         timeLabel.font = NSFont(name: "OpenSans-Light", size: 11)
     }
     
-    func togglePsiType(sender: AnyObject?) {
+    func togglePsiType(_ sender: AnyObject?) {
         // update the reading type.
         var currentType = AppConstant.getDefaultReadingType()!
         currentType.toggle() // toggle type value
-        NSUserDefaults.standardUserDefaults().setValue(currentType.rawValue, forKey: AppConstant.keyForReadingType)
+        UserDefaults.standard.setValue(currentType.rawValue, forKey: AppConstant.keyForReadingType)
         psiTypeLabel.stringValue = currentType.title()
         if let data = currentPsiData {
             spinner.stopAnimation(self)
@@ -131,23 +131,23 @@ class IndexViewController: NSViewController {
         }
     }
     
-    func refreshDataHandler(sender: AnyObject?) {
+    func refreshDataHandler(_ sender: AnyObject?) {
         getPsiData()
     }
     
-    func showSettingMenu(sender: AnyObject?) {
+    func showSettingMenu(_ sender: AnyObject?) {
         let menuItem = sender as! NSMenuItem
-        toggleLaunchAtStartup()
-        if (applicationIsInStartUpItems()) {
-            menuItem.state = NSOnState
-        } else {
-            menuItem.state = NSOffState
-        }
+//        toggleLaunchAtStartup()
+//        if (applicationIsInStartUpItems()) {
+//            menuItem.state = NSOnState
+//        } else {
+//            menuItem.state = NSOffState
+//        }
     }
     
     private func getPsiData() {
         ApiManager.getData { (data, error) -> Void in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 guard error == nil else {
                     self.displayAlert("Oops...", details: AppConstant.error_message_network)
                     return
@@ -163,7 +163,7 @@ class IndexViewController: NSViewController {
         }
     }
     
-    private func updateDisplay(data: PsiData) {
+    private func updateDisplay(_ data: PsiData) {
         self.spinner.stopAnimation(self)
         self.spinner.removeFromSuperview()
         currentPsiData = data
@@ -200,35 +200,39 @@ class IndexViewController: NSViewController {
         }
         
         // update time label
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd hh:mm a"
-        formatter.timeZone = NSTimeZone.localTimeZone()
-        let time = formatter.stringFromDate(data.updatedTime)
+        formatter.timeZone = TimeZone.autoupdatingCurrent
+        let time = formatter.string(from: data.updatedTime as Date)
         timeLabel.stringValue = "Updated on \(time)"
     }
     
-    private func changeBackgroundColor(color: NSColor) {
+    private func changeBackgroundColor(_ color: NSColor) {
         CATransaction.begin()
         let anime = CABasicAnimation(keyPath: "backgroundColor")
         
         anime.fromValue = self.view.layer?.backgroundColor
-        anime.toValue = color.CGColor
+        anime.toValue = color.cgColor
         anime.duration = 0.2
         anime.autoreverses = false
         anime.delegate = self
         CATransaction.setCompletionBlock { () -> Void in
-            self.view.layer?.backgroundColor = color.CGColor
+            self.view.layer?.backgroundColor = color.cgColor
         }
-        self.view.layer?.addAnimation(anime, forKey: "backgroundColor")
+        self.view.layer?.add(anime, forKey: "backgroundColor")
         CATransaction.commit()
         
     }
     
-    private func displayAlert(title:String, details:String) {
+    private func displayAlert(_ title:String, details:String) {
         let alert = NSAlert()
-        alert.alertStyle = NSAlertStyle.WarningAlertStyle
+        alert.alertStyle = NSAlertStyle.warning
         alert.messageText = title
         alert.informativeText = details
         alert.runModal()
     }
+}
+
+extension IndexViewController: CAAnimationDelegate {
+    
 }

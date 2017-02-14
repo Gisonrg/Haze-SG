@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1253A9EE1BA7B071008AF6C0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9ED1BA7B071008AF6C0 /* Config.swift */; };
-		1253A9F01BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9EF1BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift */; };
 		1253A9F31BA7C4C6008AF6C0 /* PsiReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9F21BA7C4C6008AF6C0 /* PsiReading.swift */; };
 		1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1253A9F41BA7C71D008AF6C0 /* PsiData.swift */; };
 		12E8E83F1BA9018F005B4F7C /* String+ToDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */; };
@@ -28,7 +27,7 @@
 		9873433D1BB5BC9C0090D088 /* OpenSans-Light.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9873433B1BB5BC9C0090D088 /* OpenSans-Light.ttf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9873433E1BB5BC9C0090D088 /* OpenSans-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9873433C1BB5BC9C0090D088 /* OpenSans-Regular.ttf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		98ACF81D1BAEF44B00BE0367 /* LaunchStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */; };
-		F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E647CA0C2A393ACF01813A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B670025B034DBEF9276EF91C /* Pods_Haze_SG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BA4ECFF39F7990201FACDC /* Pods_Haze_SG.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,11 +56,10 @@
 
 /* Begin PBXFileReference section */
 		1253A9ED1BA7B071008AF6C0 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		1253A9EF1BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+XmlResponse.swift"; sourceTree = "<group>"; };
 		1253A9F21BA7C4C6008AF6C0 /* PsiReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsiReading.swift; sourceTree = "<group>"; };
 		1253A9F41BA7C71D008AF6C0 /* PsiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsiData.swift; sourceTree = "<group>"; };
 		12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToDouble.swift"; sourceTree = "<group>"; };
-		27E843C37512E364F8BB5592 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		91BA4ECFF39F7990201FACDC /* Pods_Haze_SG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Haze_SG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		982863FC1BADE735000B6089 /* ContextMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuButton.swift; sourceTree = "<group>"; };
 		9832B64F1BA6FA7C00C8D7EC /* Haze@SG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haze@SG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9832B6531BA6FA7C00C8D7EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,8 +83,9 @@
 		9873433C1BB5BC9C0090D088 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStarter.swift; sourceTree = "<group>"; };
+		9DA394B6B09C406316C4E27D /* Pods-Haze@SG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haze@SG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Haze@SG/Pods-Haze@SG.debug.xcconfig"; sourceTree = "<group>"; };
 		9E647CA0C2A393ACF01813A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9EB78AD6622056F3CC682C0A /* Pods-Haze@SG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haze@SG.release.xcconfig"; path = "Pods/Target Support Files/Pods-Haze@SG/Pods-Haze@SG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				985F9B1C1BAF074B00D38333 /* SystemConfiguration.framework in Frameworks */,
-				F861C414F8EAF0F3956B56F4 /* Pods.framework in Frameworks */,
+				B670025B034DBEF9276EF91C /* Pods_Haze_SG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,15 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06DEE8E37AACD8F8DA000A81 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */,
-				27E843C37512E364F8BB5592 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		1253A9F11BA7C3FE008AF6C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +132,18 @@
 				985F9B1B1BAF074B00D38333 /* SystemConfiguration.framework */,
 				98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */,
 				9E647CA0C2A393ACF01813A2 /* Pods.framework */,
+				91BA4ECFF39F7990201FACDC /* Pods_Haze_SG.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		658E1474C473FAE44BC1EAC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DA394B6B09C406316C4E27D /* Pods-Haze@SG.debug.xcconfig */,
+				9EB78AD6622056F3CC682C0A /* Pods-Haze@SG.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9832B6461BA6FA7C00C8D7EC = {
@@ -152,8 +152,8 @@
 				9832B6511BA6FA7C00C8D7EC /* Haze@SG */,
 				9832B6621BA6FA7C00C8D7EC /* Haze@SGTests */,
 				9832B6501BA6FA7C00C8D7EC /* Products */,
-				06DEE8E37AACD8F8DA000A81 /* Pods */,
 				28C05C6C163B50064B9E6EAE /* Frameworks */,
+				658E1474C473FAE44BC1EAC8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,7 +232,6 @@
 			children = (
 				9832B67A1BA714F500C8D7EC /* ApiManager.swift */,
 				9832B6761BA7087B00C8D7EC /* EventMonitor.swift */,
-				1253A9EF1BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift */,
 				9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */,
 				12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */,
 				98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */,
@@ -265,13 +264,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9832B6691BA6FA7C00C8D7EC /* Build configuration list for PBXNativeTarget "Haze@SG" */;
 			buildPhases = (
-				7F74A5F314208F3A21E78ACF /* Check Pods Manifest.lock */,
+				35C3195CBE6A17397C8B4210 /* [CP] Check Pods Manifest.lock */,
 				9832B64B1BA6FA7C00C8D7EC /* Sources */,
 				9832B64C1BA6FA7C00C8D7EC /* Frameworks */,
 				9832B64D1BA6FA7C00C8D7EC /* Resources */,
-				AA58F766C2DB10803A4CDEE6 /* Embed Pods Frameworks */,
-				219B81100D65AFE0ED235945 /* Copy Pods Resources */,
 				9873433A1BB5BC850090D088 /* CopyFiles */,
+				C834EAFD9F73A4D9D14085B8 /* [CP] Embed Pods Frameworks */,
+				23AC48539281F4FC38697C5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,15 +306,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Gisonrg;
 				TargetAttributes = {
 					9832B64E1BA6FA7C00C8D7EC = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 4QY7739P4X;
+						LastSwiftMigration = 0820;
 					};
 					9832B65E1BA6FA7C00C8D7EC = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 						TestTargetID = 9832B64E1BA6FA7C00C8D7EC;
 					};
 				};
@@ -360,49 +361,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		219B81100D65AFE0ED235945 /* Copy Pods Resources */ = {
+		23AC48539281F4FC38697C5F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Haze@SG/Pods-Haze@SG-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F74A5F314208F3A21E78ACF /* Check Pods Manifest.lock */ = {
+		35C3195CBE6A17397C8B4210 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		AA58F766C2DB10803A4CDEE6 /* Embed Pods Frameworks */ = {
+		C834EAFD9F73A4D9D14085B8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Haze@SG/Pods-Haze@SG-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -420,7 +421,6 @@
 				982863FD1BADE735000B6089 /* ContextMenuButton.swift in Sources */,
 				1253A9EE1BA7B071008AF6C0 /* Config.swift in Sources */,
 				9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */,
-				1253A9F01BA7B85E008AF6C0 /* Alamofire+XmlResponse.swift in Sources */,
 				9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */,
 				985F9B181BAF027300D38333 /* Reachability.m in Sources */,
 				1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */,
@@ -472,8 +472,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -496,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -517,8 +519,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -534,15 +538,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
 		9832B66A1BA6FA7C00C8D7EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4870D55CCBB71A8D1C40B1A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 9DA394B6B09C406316C4E27D /* Pods-Haze@SG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -554,12 +559,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Haze@SG/Haze@SG-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		9832B66B1BA6FA7C00C8D7EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27E843C37512E364F8BB5592 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 9EB78AD6622056F3CC682C0A /* Pods-Haze@SG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -570,6 +576,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gisonrg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Haze@SG/Haze@SG-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -590,6 +597,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gisonrg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haze@SG.app/Contents/MacOS/Haze@SG";
 			};
 			name = Debug;
@@ -607,6 +615,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gisonrg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haze@SG.app/Contents/MacOS/Haze@SG";
 			};
 			name = Release;
