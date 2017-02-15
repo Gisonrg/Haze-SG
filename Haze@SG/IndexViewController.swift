@@ -59,9 +59,9 @@ class IndexViewController: NSViewController {
         
         // configure context menu
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Start when login", action: #selector(IndexViewController.showSettingMenu(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Start when login", action: #selector(IndexViewController.changeLoginBehaviour(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
-//        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSInputServiceProvider.terminate(_:)), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         settingButton.menu = menu
         
         // add tap region for toggle reading type
@@ -90,11 +90,11 @@ class IndexViewController: NSViewController {
         let currentType = AppConstant.getDefaultReadingType()!
         psiTypeLabel.stringValue = currentType.title()
         
-//        if (applicationIsInStartUpItems()) {
-//            settingButton.menu?.item(at: 0)?.state = NSOnState
-//        } else {
-//            settingButton.menu?.item(at: 0)?.state = NSOffState
-//        }
+        if (applicationIsInStartUpItems()) {
+            settingButton.menu?.item(at: 0)?.state = NSOnState
+        } else {
+            settingButton.menu?.item(at: 0)?.state = NSOffState
+        }
     }
     
     func setUpFont() {
@@ -135,7 +135,7 @@ class IndexViewController: NSViewController {
         getPsiData()
     }
     
-    func showSettingMenu(_ sender: AnyObject?) {
+    func changeLoginBehaviour(_ sender: AnyObject?) {
         let menuItem = sender as! NSMenuItem
         toggleLaunchAtStartup()
         if (applicationIsInStartUpItems()) {

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ReachabilitySwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -17,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = NSPopover()
     let indexController = IndexViewController(nibName: "IndexViewController", bundle: nil)!
     
-    var reach: Reachability?
+    let reachability = Reachability()!
     var timer: Timer?
     var eventMonitor: EventMonitor?
 
@@ -35,21 +36,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         eventMonitor?.start()
+
+        // Reachability setup
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged),name: ReachabilityChangedNotification,object: reachability)
         
-//        // Reachability setup
-//        self.reach = Reachability.forInternetConnection()
-//        
-//        // Set the blocks
-//        self.reach!.reachableBlock = {
-//            (reach: Reachability!) -> Void in
-//            
-//            self.getDataAndChangeApperance()
-//        }
-//        self.reach!.unreachableBlock = {
-//            (reach: Reachability!) -> Void in
-//            self.clearButtonApperance()
-//        }
-//        self.reach!.startNotifier()
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("could not start reachability notifier")
+        }
         
         // check for default display reading type: 24hrs/3hrs
         // if the default is not set, set and use 24hrs.
@@ -65,7 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         getDataAndChangeApperance()
 
         let interval = AppConstant.timedTaskFrequency
-        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: "getData:", userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(self.getData), userInfo: nil, repeats: true)
     }
     
     func getData(_ timer: Timer) {
@@ -100,6 +95,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationWillTerminate(_ aNotification: Notification) {
         timer?.invalidate()
+        reachability.stopNotifier()
+        NotificationCenter.default.removeObserver(self,
+                                                            name: ReachabilityChangedNotification,
+                                                            object: reachability)
     }
     
     func showPopover(_ sender: AnyObject?) {
@@ -121,6 +120,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             showPopover(sender)
         }
     }
-
+    
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable {
+            self.getDataAndChangeApperance()
+        } else {
+            self.clearButtonApperance()
+        }
+    }
 }
 

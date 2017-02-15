@@ -16,7 +16,7 @@ struct AppConstant {
     static let error_message_network = "Seems something wrong with the Internet connection.\n" +
                                         "Maybe you forget to connect your WiFi?"
     static let error_message_data = "Seems something wrong with the data received.\n" +
-                                    "Sorry for the inconvenience caused by NEA :("
+                                    "Sorry for the inconvenience caused by API :("
     
     static func statusBarItemAttributeForValue(_ value: String) -> Dictionary<String, AnyObject> {
         return [NSForegroundColorAttributeName : AppColor.colorForPsi(value.toDouble())]

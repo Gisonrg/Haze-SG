@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'Haze@SG' do
     pod 'Alamofire', '~> 4.3'
+    pod 'ReachabilitySwift', '~> 3'
 end

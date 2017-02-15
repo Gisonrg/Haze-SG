@@ -22,7 +22,6 @@
 		9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B67A1BA714F500C8D7EC /* ApiManager.swift */; };
 		9832B67D1BA863CF00C8D7EC /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B67C1BA863CF00C8D7EC /* AppConstant.swift */; };
 		9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */; };
-		985F9B181BAF027300D38333 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F9B171BAF027300D38333 /* Reachability.m */; };
 		985F9B1C1BAF074B00D38333 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 985F9B1B1BAF074B00D38333 /* SystemConfiguration.framework */; };
 		9873433D1BB5BC9C0090D088 /* OpenSans-Light.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9873433B1BB5BC9C0090D088 /* OpenSans-Light.ttf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9873433E1BB5BC9C0090D088 /* OpenSans-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9873433C1BB5BC9C0090D088 /* OpenSans-Regular.ttf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -77,8 +76,6 @@
 		9832B67C1BA863CF00C8D7EC /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
 		985F9B151BAF027200D38333 /* Haze@SG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Haze@SG-Bridging-Header.h"; sourceTree = "<group>"; };
-		985F9B161BAF027300D38333 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		985F9B171BAF027300D38333 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		985F9B1B1BAF074B00D38333 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9873433B1BB5BC9C0090D088 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		9873433C1BB5BC9C0090D088 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -172,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */,
-				985F9B141BAF026800D38333 /* Lib */,
 				12E8E83D1BA8F877005B4F7C /* Constant */,
 				1253A9F11BA7C3FE008AF6C0 /* Model */,
 				9832B6791BA713E800C8D7EC /* Util */,
@@ -249,15 +245,6 @@
 				9873433C1BB5BC9C0090D088 /* OpenSans-Regular.ttf */,
 			);
 			path = Font;
-			sourceTree = "<group>";
-		};
-		985F9B141BAF026800D38333 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				985F9B161BAF027300D38333 /* Reachability.h */,
-				985F9B171BAF027300D38333 /* Reachability.m */,
-			);
-			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,7 +412,6 @@
 				1253A9EE1BA7B071008AF6C0 /* Config.swift in Sources */,
 				9832B6841BA8860400C8D7EC /* NSColor+Hex.swift in Sources */,
 				9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */,
-				985F9B181BAF027300D38333 /* Reachability.m in Sources */,
 				1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */,
 				98BBBD221E542CD200C589C4 /* IterateEnum.swift in Sources */,
 				12E8E83F1BA9018F005B4F7C /* String+ToDouble.swift in Sources */,
@@ -502,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -542,7 +528,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
