@@ -9,29 +9,29 @@
 import Foundation
 
 enum Region: String {
-    case North = "rNO"
-    case South = "rSO"
-    case West = "rWE"
-    case East = "rEA"
-    case Central = "rCE"
-    case National = "NRS"
+    case North = "north"
+    case South = "south"
+    case West = "west"
+    case East = "east"
+    case Central = "central"
+    case National = "national"
 }
 
-class PsiReading: CustomStringConvertible {
-    fileprivate let keyFor24HrsPsi = "NPSI"
-    fileprivate let keyFor3HrsPsi = "NPSI_PM25_3HR"
+class PsiReading {
+    private var region: Region
+    private let twentyFourHourlyReading: Int
+    private let threeHourlyReading: Int
     
-    fileprivate(set) var region: Region
-    fileprivate var readings: Dictionary<String, String> = Dictionary()
-    
-    init(region: Region) {
+    init(region: Region, twentyFourHourlyReading: Int, threeHourlyReading: Int) {
         self.region = region
+        self.twentyFourHourlyReading = twentyFourHourlyReading
+        self.threeHourlyReading = threeHourlyReading
     }
     
-    func addReadingWithKey(_ key: String, value: String) {
-        readings[key] = value
+    func getRegion() -> Region {
+        return region
     }
-    
+
     func getReading(_ type: ReadingType) -> String {
         switch(type) {
             case .Psi24hrs:
@@ -42,14 +42,10 @@ class PsiReading: CustomStringConvertible {
     }
     
     func get24HrsPsi() -> String {
-        return readings[keyFor24HrsPsi]!
+        return "\(twentyFourHourlyReading)"
     }
     
     func get3HrsPsi() -> String {
-        return readings[keyFor3HrsPsi]!
-    }
-    
-    var description: String {
-        return "\(region.rawValue): \(readings)"
+        return "\(threeHourlyReading)"
     }
 }

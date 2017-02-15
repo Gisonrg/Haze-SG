@@ -31,13 +31,21 @@ enum ReadingType: String {
     }
 }
 
-class PsiData: CustomStringConvertible {
-    fileprivate(set) var updatedTime: Date
-    fileprivate(set) var readings: [PsiReading]
+class PsiData {
+    private var updatedTime: Date
+    private var readings: [PsiReading]
     
     init(time: Date, readings: [PsiReading]) {
         self.updatedTime = time
         self.readings = readings
+    }
+    
+    func getReadings() -> [PsiReading] {
+        return readings
+    }
+    
+    func getUpdatedTime() -> Date {
+        return updatedTime
     }
     
     func getNationalReading() -> String {
@@ -46,17 +54,11 @@ class PsiData: CustomStringConvertible {
         }
         
         for reading in readings {
-            if reading.region == .National {
+            if reading.getRegion() == .National {
                 return reading.getReading(type)
             }
         }
         
         return ""
-    }
-    
-    var description: String {
-        get {
-            return "\(updatedTime) : \(readings)"
-        }
     }
 }

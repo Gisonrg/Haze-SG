@@ -137,12 +137,12 @@ class IndexViewController: NSViewController {
     
     func showSettingMenu(_ sender: AnyObject?) {
         let menuItem = sender as! NSMenuItem
-//        toggleLaunchAtStartup()
-//        if (applicationIsInStartUpItems()) {
-//            menuItem.state = NSOnState
-//        } else {
-//            menuItem.state = NSOffState
-//        }
+        toggleLaunchAtStartup()
+        if (applicationIsInStartUpItems()) {
+            menuItem.state = NSOnState
+        } else {
+            menuItem.state = NSOffState
+        }
     }
     
     private func getPsiData() {
@@ -170,32 +170,32 @@ class IndexViewController: NSViewController {
         
         let type = AppConstant.getDefaultReadingType()!
         
-        for reading in data.readings {
-            switch(reading.region) {
-                case .North:
-                    northLabel.stringValue = reading.getReading(type)
-                case .South:
-                    southLabel.stringValue = reading.getReading(type)
-                case .West:
-                    westLabel.stringValue = reading.getReading(type)
-                case .East:
-                    eastLabel.stringValue = reading.getReading(type)
-                case .Central:
-                    centralLabel.stringValue = reading.getReading(type)
-                case .National:
-                    let displayValue = reading.getReading(type)
-                    nationalReadingLabel.stringValue = displayValue
-                    // Update status bar display
-                    if let button = statusBarItem {
-                        button.image = nil
-                        let attributes = AppConstant.statusBarItemAttributeForValue(displayValue)
-                        button.attributedTitle = NSMutableAttributedString(string: displayValue, attributes: attributes)
-                    }
-                    // change background color as the PSI level
-                    changeBackgroundColor(AppColor.colorForPsi(displayValue.toDouble()))
-                
-                    // update health level label as the PSI level
-                    healthLevelLabel.stringValue = AppConstant.healthLevelForPsi(displayValue.toDouble())
+        for reading in data.getReadings() {
+            switch(reading.getRegion()) {
+            case .North:
+                northLabel.stringValue = reading.getReading(type)
+            case .South:
+                southLabel.stringValue = reading.getReading(type)
+            case .West:
+                westLabel.stringValue = reading.getReading(type)
+            case .East:
+                eastLabel.stringValue = reading.getReading(type)
+            case .Central:
+                centralLabel.stringValue = reading.getReading(type)
+            case .National:
+                let displayValue = reading.getReading(type)
+                nationalReadingLabel.stringValue = displayValue
+                // Update status bar display
+                if let button = statusBarItem {
+                    button.image = nil
+                    let attributes = AppConstant.statusBarItemAttributeForValue(displayValue)
+                    button.attributedTitle = NSMutableAttributedString(string: displayValue, attributes: attributes)
+                }
+                // change background color as the PSI level
+                changeBackgroundColor(AppColor.colorForPsi(displayValue.toDouble()))
+            
+                // update health level label as the PSI level
+                healthLevelLabel.stringValue = AppConstant.healthLevelForPsi(displayValue.toDouble())
             }
         }
         
@@ -203,7 +203,7 @@ class IndexViewController: NSViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd hh:mm a"
         formatter.timeZone = TimeZone.autoupdatingCurrent
-        let time = formatter.string(from: data.updatedTime as Date)
+        let time = formatter.string(from: data.getUpdatedTime())
         timeLabel.stringValue = "Updated on \(time)"
     }
     

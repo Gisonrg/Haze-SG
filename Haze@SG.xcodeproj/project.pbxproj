@@ -27,6 +27,7 @@
 		9873433D1BB5BC9C0090D088 /* OpenSans-Light.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9873433B1BB5BC9C0090D088 /* OpenSans-Light.ttf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9873433E1BB5BC9C0090D088 /* OpenSans-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9873433C1BB5BC9C0090D088 /* OpenSans-Regular.ttf */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		98ACF81D1BAEF44B00BE0367 /* LaunchStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */; };
+		98BBBD221E542CD200C589C4 /* IterateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BBBD211E542CD200C589C4 /* IterateEnum.swift */; };
 		B670025B034DBEF9276EF91C /* Pods_Haze_SG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BA4ECFF39F7990201FACDC /* Pods_Haze_SG.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		9873433C1BB5BC9C0090D088 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		98ACF81A1BAEEC9400BE0367 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStarter.swift; sourceTree = "<group>"; };
+		98BBBD211E542CD200C589C4 /* IterateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IterateEnum.swift; sourceTree = "<group>"; };
 		9DA394B6B09C406316C4E27D /* Pods-Haze@SG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haze@SG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Haze@SG/Pods-Haze@SG.debug.xcconfig"; sourceTree = "<group>"; };
 		9E647CA0C2A393ACF01813A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB78AD6622056F3CC682C0A /* Pods-Haze@SG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Haze@SG.release.xcconfig"; path = "Pods/Target Support Files/Pods-Haze@SG/Pods-Haze@SG.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,13 +171,12 @@
 		9832B6511BA6FA7C00C8D7EC /* Haze@SG */ = {
 			isa = PBXGroup;
 			children = (
+				9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */,
 				985F9B141BAF026800D38333 /* Lib */,
 				12E8E83D1BA8F877005B4F7C /* Constant */,
-				9832B67E1BA868A100C8D7EC /* Font */,
 				1253A9F11BA7C3FE008AF6C0 /* Model */,
 				9832B6791BA713E800C8D7EC /* Util */,
 				9832B6781BA713D900C8D7EC /* Controller */,
-				9832B6541BA6FA7C00C8D7EC /* AppDelegate.swift */,
 				9832B6731BA6FCDC00C8D7EC /* View */,
 				9832B6521BA6FA7C00C8D7EC /* Supporting Files */,
 			);
@@ -185,6 +186,7 @@
 		9832B6521BA6FA7C00C8D7EC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9832B67E1BA868A100C8D7EC /* Font */,
 				985F9B151BAF027200D38333 /* Haze@SG-Bridging-Header.h */,
 				9832B6561BA6FA7C00C8D7EC /* Images.xcassets */,
 				9832B6531BA6FA7C00C8D7EC /* Info.plist */,
@@ -235,6 +237,7 @@
 				9832B6831BA8860400C8D7EC /* NSColor+Hex.swift */,
 				12E8E83E1BA9018F005B4F7C /* String+ToDouble.swift */,
 				98ACF81C1BAEF44B00BE0367 /* LaunchStarter.swift */,
+				98BBBD211E542CD200C589C4 /* IterateEnum.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				9832B67B1BA714F500C8D7EC /* ApiManager.swift in Sources */,
 				985F9B181BAF027300D38333 /* Reachability.m in Sources */,
 				1253A9F51BA7C71D008AF6C0 /* PsiData.swift in Sources */,
+				98BBBD221E542CD200C589C4 /* IterateEnum.swift in Sources */,
 				12E8E83F1BA9018F005B4F7C /* String+ToDouble.swift in Sources */,
 				9832B6771BA7087B00C8D7EC /* EventMonitor.swift in Sources */,
 			);

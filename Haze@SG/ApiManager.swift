@@ -13,62 +13,44 @@ import Alamofire
 typealias CompletionHandler = (PsiData?, Error?) -> Void
 
 class ApiManager {
-    fileprivate static let baseURL = "https://api.data.gov.sg/v1/environment/psi"
-    fileprivate static let dateFormat = "yyyyMMddHHmmss"
+    private static let baseURL = "https://api.data.gov.sg/v1/environment/psi"
+    private static let dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     
-    class func getData(_ handler: @escaping CompletionHandler) {
-        Alamofire.request(baseURL).responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+    class func getData(handler: @escaping CompletionHandler) {
+        let headers: HTTPHeaders = [
+            "api-key": Config.apiKey
+        ]
+
+        Alamofire.request(baseURL, headers: headers).validate().responseJSON { response in
+            guard response.result.isSuccess else {
+                return handler(nil, response.error)
+            }
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+            if let result = response.result.value {
+                let JSON = result as! [String:AnyObject]
+                let items = JSON["items"] as! NSArray
+                let data = items[0] as! [String:AnyObject]
+                let time = data["timestamp"] as! String
+                let readings = data["readings"] as! [String:AnyObject]
+                let threeHrsReadings = readings["psi_three_hourly"] as! [String:AnyObject]
+                let twentyFourHrsReadings = readings["psi_twenty_four_hourly"] as! [String:AnyObject]
+                
+                
+                var readingCollection: [PsiReading] = []
+                for region in iterateEnum(Region.self) {
+                    let regionData = PsiReading(region: region, twentyFourHourlyReading: twentyFourHrsReadings[region.rawValue] as! Int, threeHourlyReading: threeHrsReadings[region.rawValue] as! Int)
+                    readingCollection.append(regionData)
+                }
+                
+                // format update time
+                let formatter = DateFormatter()
+                formatter.locale = Locale(identifier: "en_US_POSIX")
+                formatter.dateFormat = dateFormat
+                formatter.timeZone = TimeZone(identifier: "SGT")
+                let psiData = PsiData(time: formatter.date(from: time)!, readings: readingCollection)
+                
+                return handler(psiData, nil)
             }
         }
-//        Alamofire.request(.GET, baseURL + Config.apiKey)
-//            .responseXMLDocument { request, response, result in
-//                // check error
-//                guard !result.isFailure else {
-//                    return handler(nil, result.error)
-//                }
-//                
-//                // check response code
-//                if let res = response {
-//                    if res.statusCode != 200 {
-//                        return handler(nil, nil)
-//                    }
-//                }
-//                
-//                guard let data = result.value else {
-//                    return handler(nil, nil)
-//                }
-//                
-//                var updateTime: String?
-//                var psiReadingCollection = [PsiReading]()
-//                for reginData in data["channel"]["item"]["region"] {
-//                    let psiReading = PsiReading(region: Region(rawValue: reginData["id"].element!.text!)!)
-//                    updateTime = reginData["record"].element?.attributes["timestamp"]
-//                    for reading in reginData["record"].children {
-//                        let readingType = reading.element!.attributes["type"]!
-//                        let readingValue = reading.element!.attributes["value"]!
-//                        psiReading.addReadingWithKey(readingType, value: readingValue)
-//                    }
-//                    psiReadingCollection.append(psiReading)
-//                }
-//                
-//                guard let time = updateTime else {
-//                    return handler(nil, nil) // no time data received, bad request
-//                }
-//                
-//                // format update time
-//                let formatter = NSDateFormatter()
-//                formatter.dateFormat = self.dateFormat
-//                formatter.timeZone = NSTimeZone.localTimeZone()
-//                let psiData = PsiData(time: formatter.dateFromString(time)!, readings: psiReadingCollection)
-//                
-//                return handler(psiData, nil)
-//        }
     }
 }
