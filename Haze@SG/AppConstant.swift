@@ -11,7 +11,7 @@ import Cocoa
 struct AppConstant {
     static let keyForReadingType: String = "ReadingType"
     
-    static let timedTaskFrequency: TimeInterval = 60 * 5 // 5 mins, in seconds
+    static let timedTaskFrequency: TimeInterval = 60 * 10 // 10 mins, in seconds
     
     static let error_message_network = "Seems something wrong with the Internet connection.\n" +
                                         "Maybe you forget to connect your WiFi?"
