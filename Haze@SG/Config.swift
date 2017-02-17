@@ -10,5 +10,5 @@ import Foundation
 
 struct Config {
     // Register and get your API key on Data.gov at https://developers.data.gov.sg/environment/psi
-    static let apiKey = "ycHWlAJ18p4WnZpVAoeW8ko2ePvr2GeH"
+    static let apiKey = ""
 }
